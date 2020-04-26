@@ -11,37 +11,46 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <title>Quiz</title>
 </head>
-
 <body>
     <div class="container-fluid home">
-        <div class="row container-fluid quiz-time">
-            <div class="col-xs-12">
-                <h1>
-                    <span>Q</span>
-                    <span>u</span>
-                    <span>i</span>
-                    <span>z</span>
-                    <br>
-                    <span>T</span>
-                    <span>i</span>
-                    <span>m</span>
-                    <span>e</span>
-                </h1>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 info">
-                    <p>Quiz Night is a free online quiz game that generates a multiple choice quiz in your choosen in your choosen category. With 15 categories and about 9000 questions there is something for everyone to enjoy. </p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid load">
-            <button class="btn btn-secondary load-button" onclick="location.href='#'">Load Quiz</button>
-        </div>
+        <input type="number" name="number-of-questions" min="1" max="50" class="select-options">
+        <select class="select-options">
+            <option value="any">Any Category</option>
+            <option value="general-knowledge">General Knowledge</option>
+            <option value="books">Books</option>
+            <option value="films">Films</option>
+            <option value="music">Music</option>
+            <option value="musicals">Musicals</option>
+            <option value="television">Television</option>
+            <option value="video-games">Video Games</option>
+            <option value="board-games">Board Games</option>
+            <option value="science-&-nature">Science & Nature</option>
+            <option value="computers">Computers</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="mythology">Mythology</option>
+            <option value="sports">Sports</option>
+            <option value="geography">Geography</option>
+            <option value="history">History</option>
+            <option value="politics">Politics</option>
+            <option value="art">Art</option>
+            <option value="celebrities">Celebrities</option>
+            <option value="animals">Animals</option>
+            <option value="vehicles">Vehicles</option>
+        </select>
+        <select class="select-options">
+            <option value="any-difficulty">Any Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <select class="select-options">
+            <option value="any-type">Any Type</option>
+            <option value="multiple-choice">Multiple Choice</option>
+            <option value="true/false">True/False</option>
+        </select>
     </div>
-    
-    <footer class="container-fluid">
+</body>
+<footer class="container-fluid">
         <div id="footer-details" class="row">
             <div class="col-sm">
                 <h4 class="uppercase footer-info">Social Links</h4>

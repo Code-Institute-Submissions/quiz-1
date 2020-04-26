@@ -1,14 +1,40 @@
+/*--------------------------- home --------------- */
+.home{
+    background-color: #4582F4;
+    height: auto;
+}
+
+.info {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding-top: 40px;
+  width: 50%;
+  margin: auto;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.load-button {
+  background-color: #1D2129;
+}
+
 /*--------------------------- animation --------------- */
 
-/* JUMP */
-h1 {
-  cursor: default;
-  bottom: 80%;
-  width: 100%;
-  height: 100px;
-  margin: auto;
-  display: block;
+.quiz-time {
   text-align: center;
+  padding-top: 100px;
+  width: 100vw;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -20px;
 }
 
 h1 span {
@@ -16,7 +42,7 @@ h1 span {
   top: 20px;
   display: inline-block;
   -webkit-animation: bounce 0.3s ease infinite alternate;
-  font-size: 120px;
+  font-size: 100px;
   color: #fff;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
@@ -85,20 +111,6 @@ h1 span:nth-child(14) {
   }
 }
 
-/*--------------------------- home --------------- */
-.home{
-    background-color: #4582F4;
-    width: auto;
-    height: 756px;
-}
-
-.info {
-    width: 400px;
-    text-align: center;
-    background-color: #fafafa;
-}
-
-
 /*--------------------------- footer --------------- */
 
 footer {
@@ -129,6 +141,15 @@ footer {
 }
 
 .copyright { 
-    padding-top: 7px;
-    margin-bottom: 0;
+    text-align: center;
+    color: #000000;
+}
+
+/*--------------------------- Quiz Loading --------------- */
+
+.select-options {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 10px;
 }
