@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <script type="text/javascript" src="assets/js/modal-timer.js"></script>
     <title>Quiz</title>
 </head>
+
 <body>
     <div class="container-fluid home">
         <div>
@@ -51,11 +53,30 @@
             </select>
         </div>
         <div class="container-fluid load">
-            <button class="btn btn-secondary load-button" onclick="location.href='#'">Start Quiz</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="load-button" data-toggle="modal" data-target="#exampleModalCenter">
+                  Start Quiz
+            </button>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Quiz Starts in</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="countdown">
+                                <div class="square">
+                                    <div class="digits" id="cd-sec">00</div>
+                                    <div class="text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</body>
-<footer class="container-fluid">
+    <footer class="container-fluid">
         <div id="footer-details" class="row">
             <div class="col-sm">
                 <h4 class="uppercase footer-info">Social Links</h4>
@@ -103,4 +124,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+</html>
