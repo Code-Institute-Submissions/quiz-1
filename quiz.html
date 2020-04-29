@@ -9,75 +9,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <script type="text/javascript" src="assets/js/modal-timer.js"></script>
+    <script type="text/javascript" src="assets/js/quiz-timer.js"></script>
     <title>Quiz</title>
 </head>
 
 <body>
     <div class="container-fluid home">
-        <div>
-            <select class="select-amount">
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-            </select>
-            <select class="select-category">
-                <option value="any">Any Category</option>
-                <option value="general-knowledge">General Knowledge</option>
-                <option value="books">Books</option>
-                <option value="films">Films</option>
-                <option value="music">Music</option>
-                <option value="musicals">Musicals</option>
-                <option value="television">Television</option>
-                <option value="video-games">Video Games</option>
-                <option value="board-games">Board Games</option>
-                <option value="science-&-nature">Science & Nature</option>
-                <option value="computers">Computers</option>
-                <option value="mathematics">Mathematics</option>
-                <option value="mythology">Mythology</option>
-                <option value="sports">Sports</option>
-                <option value="geography">Geography</option>
-                <option value="history">History</option>
-                <option value="politics">Politics</option>
-                <option value="art">Art</option>
-                <option value="celebrities">Celebrities</option>
-                <option value="animals">Animals</option>
-                <option value="vehicles">Vehicles</option>
-            </select>
-            <select class="select-difficulty">
-                <option value="any-difficulty">Any Difficulty</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <select class="select-type">
-                <option value="any-type">Any Type</option>
-                <option value="multiple-choice">Multiple Choice</option>
-                <option value="true/false">True/False</option>
-            </select>
+        <div class="container-fluid mute-button">
+            <button class="btn"><i class="fa fa-volume-up fa-2x"></i></button>
         </div>
-        <div class="container-fluid load">
-            <button type="button" onclick="timeDelay()" class="load-button" data-toggle="modal" data-target="#exampleModalCenter">
-                  Start Quiz
-            </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5>Quiz Starts in</h5>
-                        </div>
-                        <div class="modal-body">
-                            <div class="countdown">
-                                <div class="square">
-                                    <div class="digits" id="cd-sec">00</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="container-fluid countdown-quiz">
+            <div class="square">
+                <div class="digits" id="cd-min">00</div>
             </div>
+            <div class="square">
+                <div class="digits" id="cd-sec">00</div>
+            </div>
+        </div>
+        <div id="question">
+
+        </div>
+        <div id="answer">
+            
         </div>
     </div>
     <footer class="container-fluid">
@@ -132,4 +85,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,19 +1,11 @@
-function timeDelay() {
-    setTimeout(function(){ 
-
-      window.location.href = "quiz.html";
-
-}, 6000);
-}
-
-
 var counter = {};
-window.addEventListener("click", function () {
+window.addEventListener("load", function () {
   // COUNTDOWN IN SECONDS
   // EXAMPLE - 5 MINS = 5 X 60 = 300 SECS
-  counter.end = 6;
+  counter.end = 300;
 
   // Get the containers
+  counter.min = document.getElementById("cd-min");
   counter.sec = document.getElementById("cd-sec");
 
   // Start if not past end date 
@@ -32,8 +24,8 @@ window.addEventListener("click", function () {
       secs -= mins * 60;
 
       // Update HTML
+      counter.min.innerHTML = mins;
       counter.sec.innerHTML = secs;
     }, 1000);
   }
 });
-

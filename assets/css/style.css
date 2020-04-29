@@ -1,7 +1,7 @@
 /*--------------------------- home --------------- */
 .home{
     background-color: #4582F4;
-    height: auto;
+    height: 765px;
 }
 
 .info {
@@ -215,6 +215,48 @@ footer {
   border-radius: 5px;
 }
 .countdown .text {
+  margin-top: 10px;
+  color: #ddd;
+}
+
+/*--------------------------- quiz page --------------- */
+
+.btn {
+  color: #000000;
+}
+
+.mute-button {
+  margin-top: 20px;
+  float: right;
+}
+
+.countdown-quiz {
+  margin: 0 auto;
+  max-width: 350px;
+  background: #ff0000;
+  font-family: Impact, Charcoal, sans-serif;
+  text-align: center;
+  clear: both;
+}
+.countdown-quiz .header {
+  color: #c61d1d;
+  text-align: center;
+  font-weight: normal;
+  margin: 5px 0 10px 0;
+}
+.countdown-quiz .square {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+}
+.countdown-quiz .digits {
+  font-size: 24px;
+  background: #fff;
+  color: #000;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+.countdown-quiz .text {
   margin-top: 10px;
   color: #ddd;
 }
