@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    <script type="text/javascript" src="assets/js/quiz-timer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <title>Quiz</title>
 </head>
 
@@ -26,11 +26,22 @@
                 <div class="digits" id="cd-sec">00</div>
             </div>
         </div>
-        <div id="question">
-
+        <div>
+            <div id="question">
+                
+            </div>
         </div>
-        <div id="answer">
-            
+        <div>
+            <div id="answers">
+                <label for="a">a</label>
+                <input type="radio" name="answer" id="choice" value="1"/>
+                <label for="b">b</label>
+                <input type="radio" name="answer" id="choice" value="2"/><br>
+                <label for="c">c</label>
+                <input type="radio" name="answer" id="choice" value="3"/>
+                 <label for="d">d</label>
+                <input type="radio" name="answer" id="choice" value="4"/>
+            </div>
         </div>
     </div>
     <footer class="container-fluid">
@@ -81,9 +92,8 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/quiz-timer.js"></script>
+    <script type="text/javascript module"  src="assets/js/quiz.js"></script>
 </body>
 
 </html>
