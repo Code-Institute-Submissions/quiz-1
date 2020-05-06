@@ -1,12 +1,3 @@
-function timeDelay() {
-    setTimeout(function(){ 
-
-      window.location.href = "quiz.html";
-
-}, 6000);
-}
-
-
 var counter = {};
 window.addEventListener("click", function () {
   // COUNTDOWN IN SECONDS

@@ -1,7 +1,14 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
 /*--------------------------- home --------------- */
-.home{
-    background-color: #4582F4;
-    height: 765px;
+
+.home {
+  background-color: #4582F4;
+  height: 765px;
 }
 
 .info {
@@ -23,13 +30,13 @@
 .load-button {
   background-color: #1D2129;
   webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 
-    text-decoration: none;
-    color: #fafafa;
-    padding: 10px;
-    border-radius: 5px;
+  text-decoration: none;
+  color: #fafafa;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /*--------------------------- animation --------------- */
@@ -53,8 +60,8 @@ h1 span {
   font-size: 100px;
   color: #fff;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
-    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+  0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 h1 span:nth-child(2) {
@@ -110,47 +117,48 @@ h1 span:nth-child(14) {
 }
 
 /* ANIMATION */
+
 @-webkit-keyframes bounce {
   100% {
     top: -20px;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
-      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
-      0 50px 25px rgba(0, 0, 0, 0.2);
+    0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+    0 50px 25px rgba(0, 0, 0, 0.2);
   }
 }
 
 /*--------------------------- footer --------------- */
 
 footer {
-    color: #fafafa;
-    padding-top: 25px;
-    background-color: #B2B5B9;
-    display: inline-block;
+  color: #fafafa;
+  padding-top: 25px;
+  background-color: #B2B5B9;
+  display: inline-block;
 }
 
 .footer-info {
-    font-weight: bold;
-    text-align: center;
-    color: #000000;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
 }
 
 .list-inline-item {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .social-links {
-    text-align: center;
-    color: #000000;
+  text-align: center;
+  color: #000000;
 }
 
-.copyright { 
-    text-align: center;
-    color: #000000;
+.copyright {
+  text-align: center;
+  color: #000000;
 }
 
 /*--------------------------- Quiz Loading --------------- */
@@ -188,7 +196,7 @@ footer {
 }
 
 /*--------------------------- timer --------------- */
- 
+
 .countdown {
   margin: 0 auto;
   max-width: 350px;
@@ -196,17 +204,20 @@ footer {
   font-family: Impact, Charcoal, sans-serif;
   text-align: center;
 }
+
 .countdown .header {
   color: #c61d1d;
   text-align: center;
   font-weight: normal;
   margin: 5px 0 10px 0;
 }
+
 .countdown .square {
   display: inline-block;
   padding: 10px;
   margin: 5px;
 }
+
 .countdown .digits {
   font-size: 24px;
   background: #fff;
@@ -214,6 +225,7 @@ footer {
   padding: 20px 10px;
   border-radius: 5px;
 }
+
 .countdown .text {
   margin-top: 10px;
   color: #ddd;
@@ -238,17 +250,20 @@ footer {
   text-align: center;
   clear: both;
 }
+
 .countdown-quiz .header {
   color: #c61d1d;
   text-align: center;
   font-weight: normal;
   margin: 5px 0 10px 0;
 }
+
 .countdown-quiz .square {
   display: inline-block;
   padding: 10px;
   margin: 5px;
 }
+
 .countdown-quiz .digits {
   font-size: 24px;
   background: #fff;
@@ -256,7 +271,37 @@ footer {
   padding: 20px 10px;
   border-radius: 5px;
 }
+
 .countdown-quiz .text {
   margin-top: 10px;
   color: #ddd;
+}
+
+/*--------------------------- Leaderboard page --------------- */
+
+.leaderboard-title {
+  text-align: center;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+table {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table,
+th,
+td {
+  border: solid 1px black;
+  background-color: white;
+  text-align: center;
+  width: 30%;
 }

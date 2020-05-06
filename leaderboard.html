@@ -10,38 +10,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="assets/js/quiz-timer.js"></script>
-    <script src="assets/js/api-value.js"></script>
+    <script type="text/javascript" src="assets/js/modal-score.js"></script>
     <title>Quiz</title>
 </head>
 
 <body>
     <div class="container-fluid home">
-        <div class="container-fluid mute-button">
-            <button class="btn"><i class="fa fa-volume-up fa-2x"></i></button>
-        </div>
-        <div class="container-fluid countdown-quiz">
-            <div class="square">
-                <div class="digits" id="cd-min">00</div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Congratulations<br>Your score is</h5>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Show Leaderboard</button>
+                        <a href="load.html" class="load-button">Play Again</a>
+                    </div>
+                </div>
             </div>
-            <div class="square">
-                <div class="digits" id="cd-sec">00</div>
-            </div>
         </div>
-        <div id="question">
-
+        <div class="table">
+            <caption><h2 class="leaderboard-title">Leaderboard</h2></caption>
+            <table>
+                <tr>
+                    <th>Postion</th>
+                    <th>User Name</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>1st</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4th</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5th</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
-        <div>
-            <div id="answers">
-                <label for="a">a</label>
-                <input type="radio" name="answer" id="choice" value="1" />
-                <label for="b">b</label>
-                <input type="radio" name="answer" id="choice" value="2" /><br>
-                <label for="c">c</label>
-                <input type="radio" name="answer" id="choice" value="3" />
-                <label for="d">d</label>
-                <input type="radio" name="answer" id="choice" value="4" />
-            </div>
+        <div class="score-message">
+            
         </div>
     </div>
     <footer class="container-fluid">
@@ -92,6 +119,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
