@@ -15,7 +15,7 @@
     <title>Quiz</title>
 </head>
 
-<body onload="apiRequest(); getQuestionsAndAns(); hideUnusedSlides()">
+<body onload="apiRequest(); displayQuestions(); hideUnusedSlides();">
     <div class="container-fluid home">
         <div class="container-fluid mute-button">
             <button class="btn"><i class="fa fa-volume-up fa-2x"></i></button>
@@ -28,10 +28,10 @@
                 <div class="digits" id="cd-sec">00</div>
             </div>
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <h2 id="question">Question 1:</h2>
+                    <h2 id="question-1"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question">Question 2:</h2>
+                    <h2 id="question-2"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question">Question 3:</h2>
+                    <h2 id="question-3"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question">Question 4:</h2>
+                    <h2 id="question-4"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question">Question 5:</h2>
+                    <h2 id="question-5"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-6">
-                    <h2 id="question">Question 6:</h2>
+                    <h2 id="question-6"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-7">
-                    <h2 id="question">Question 7:</h2>
+                    <h2 id="question-7"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -122,7 +122,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-8">
-                    <h2 id="question">Question 8:</h2>
+                    <h2 id="question-8"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -135,7 +135,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-9">
-                    <h2 id="question">Question 9:</h2>
+                    <h2 id="question-9"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-10">
-                    <h2 id="question">Question 10:</h2>
+                    <h2 id="question-10"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -161,7 +161,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-11">
-                    <h2 id="question">Question 11:</h2>
+                    <h2 id="question-11"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-12">
-                    <h2 id="question">Question 12:</h2>
+                    <h2 id="question-12"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -187,7 +187,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-13">
-                    <h2 id="question">Question 13:</h2>
+                    <h2 id="question-13"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -200,7 +200,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-14">
-                    <h2 id="question">Question 14:</h2>
+                    <h2 id="question-14"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -213,7 +213,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-15">
-                    <h2 id="question">Question 15:</h2>
+                    <h2 id="question-15"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -226,7 +226,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-16">
-                    <h2 id="question">Question 16:</h2>
+                    <h2 id="question-16"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -239,7 +239,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-17">
-                    <h2 id="question">Question 17</h2>
+                    <h2 id="question-17"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -252,7 +252,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-18">
-                    <h2 id="question">Question 18:</h2>
+                    <h2 id="question-18"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -265,7 +265,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-19">
-                    <h2 id="question">Question 19:</h2>
+                    <h2 id="question-19"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-20">
-                    <h2 id="question">Question 20:</h2>
+                    <h2 id="question-20"></h2>
                     <div id="answers">
                         <label for="a">a</label>
                         <input type="radio" name="answer" id="choice-a" value="1" />
