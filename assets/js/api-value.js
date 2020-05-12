@@ -9,18 +9,12 @@ function apiValues() {
     category = $("#category option:selected").data("category");
     difficulty = $("#difficulty option:selected").data("difficulty");
     type = $("#type option:selected").data("type");
-    
+
     sessionStorage.setItem('amount', amount);
     sessionStorage.setItem('category', category);
     sessionStorage.setItem('difficulty', difficulty);
     sessionStorage.setItem('type', type);
-    
-    console.log(sessionStorage);
-    
-    console.log(amount);
-    console.log(category);
-    console.log(difficulty);
-    console.log(type);
+
 }
 
 function timeDelay() {
@@ -31,4 +25,4 @@ function timeDelay() {
     }, 6000);
 }
 
-
+console.log(amount);

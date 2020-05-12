@@ -19,14 +19,12 @@
     <div class="container-fluid home">
         <div>
             <select class="select-amount" id="amount" onchange="apiValues()">
+                <option data-amount="5">5</option>
                 <option data-amount="10">10</option>
+                <option data-amount="15">15</option>
                 <option data-amount="20">20</option>
-                <option data-amount="30">30</option>
-                <option data-amount="40">40</option>
-                <option data-amount="50">50</option>
             </select>
             <select class="select-category" id="category" onchange="apiValues();">
-                <option>Any Category</option>
                 <option data-category="9">General Knowledge</option>
                 <option data-category="10">Books</option>
                 <option data-category="11">Films</option>
@@ -49,13 +47,11 @@
                 <option data-category="28">Vehicles</option>
             </select>
             <select class="select-difficulty" id="difficulty" onchange="apiValues();">
-                <option>Any Difficulty</option>
                 <option data-difficulty="easy">Easy</option>
                 <option data-difficulty="medium">Medium</option>
                 <option data-difficulty="hard">Hard</option>
             </select>
             <select class="select-type" id="type" onchange="apiValues();">
-                <option>Any Type</option>
                 <option data-type="multiple">Multiple Choice</option>
                 <option data-type="boolean">True/False</option>
             </select>
