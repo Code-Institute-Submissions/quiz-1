@@ -1,8 +1,9 @@
 var amount;
-var data;
+var myQuestions;
 var questions;
 var incorrectAns;
 var correctAns;
+var answers;
 
 function hideUnusedSlides() {
     if (amount == 15) {
@@ -64,81 +65,75 @@ function apiRequest(type, cb) {
 
 function displayQuestions(type) {
     apiRequest(type, function(data) {
-        data = data.results;
-        console.log(data);
-        data.forEach(function(item) {
+        myQuestions = data.results;
+        console.log(myQuestions);
+        myQuestions.forEach(function() {
             if (amount == 5) {
-                document.getElementById("question-1").innerHTML = data[0].question;
-                document.getElementById("question-2").innerHTML = data[1].question;
-                document.getElementById("question-3").innerHTML = data[2].question;
-                document.getElementById("question-4").innerHTML = data[3].question;
-                document.getElementById("question-5").innerHTML = data[4].question;
+                document.getElementById("question-1").innerHTML = myQuestions[0].question;
+                document.getElementById("question-2").innerHTML = myQuestions[1].question;
+                document.getElementById("question-3").innerHTML = myQuestions[2].question;
+                document.getElementById("question-4").innerHTML = myQuestions[3].question;
+                document.getElementById("question-5").innerHTML = myQuestions[4].question;
             }
             else if (amount == 10) {
-                document.getElementById("question-1").innerHTML = data[0].question;
-                document.getElementById("question-2").innerHTML = data[1].question;
-                document.getElementById("question-3").innerHTML = data[2].question;
-                document.getElementById("question-4").innerHTML = data[3].question;
-                document.getElementById("question-5").innerHTML = data[4].question;
-                document.getElementById("question-6").innerHTML = data[5].question;
-                document.getElementById("question-7").innerHTML = data[6].question;
-                document.getElementById("question-8").innerHTML = data[7].question;
-                document.getElementById("question-9").innerHTML = data[8].question;
-                document.getElementById("question-10").innerHTML = data[9].question;
+                document.getElementById("question-1").innerHTML = myQuestions[0].question;
+                document.getElementById("question-2").innerHTML = myQuestions[1].question;
+                document.getElementById("question-3").innerHTML = myQuestions[2].question;
+                document.getElementById("question-4").innerHTML = myQuestions[3].question;
+                document.getElementById("question-5").innerHTML = myQuestions[4].question;
+                document.getElementById("question-6").innerHTML = myQuestions[5].question;
+                document.getElementById("question-7").innerHTML = myQuestions[6].question;
+                document.getElementById("question-8").innerHTML = myQuestions[7].question;
+                document.getElementById("question-9").innerHTML = myQuestions[8].question;
+                document.getElementById("question-10").innerHTML = myQuestions[9].question;
             }
             else if (amount == 15) {
-                document.getElementById("question-1").innerHTML = data[0].question;
-                document.getElementById("question-2").innerHTML = data[1].question;
-                document.getElementById("question-3").innerHTML = data[2].question;
-                document.getElementById("question-4").innerHTML = data[3].question;
-                document.getElementById("question-5").innerHTML = data[4].question;
-                document.getElementById("question-6").innerHTML = data[5].question;
-                document.getElementById("question-7").innerHTML = data[6].question;
-                document.getElementById("question-8").innerHTML = data[7].question;
-                document.getElementById("question-9").innerHTML = data[8].question;
-                document.getElementById("question-10").innerHTML = data[9].question;
-                document.getElementById("question-11").innerHTML = data[10].question;
-                document.getElementById("question-12").innerHTML = data[11].question;
-                document.getElementById("question-13").innerHTML = data[12].question;
-                document.getElementById("question-14").innerHTML = data[13].question;
-                document.getElementById("question-15").innerHTML = data[14].question;
+                document.getElementById("question-1").innerHTML = myQuestions[0].question;
+                document.getElementById("question-2").innerHTML = myQuestions[1].question;
+                document.getElementById("question-3").innerHTML = myQuestions[2].question;
+                document.getElementById("question-4").innerHTML = myQuestions[3].question;
+                document.getElementById("question-5").innerHTML = myQuestions[4].question;
+                document.getElementById("question-6").innerHTML = myQuestions[5].question;
+                document.getElementById("question-7").innerHTML = myQuestions[6].question;
+                document.getElementById("question-8").innerHTML = myQuestions[7].question;
+                document.getElementById("question-9").innerHTML = myQuestions[8].question;
+                document.getElementById("question-10").innerHTML = myQuestions[9].question;
+                document.getElementById("question-11").innerHTML = myQuestions[10].question;
+                document.getElementById("question-12").innerHTML = myQuestions[11].question;
+                document.getElementById("question-13").innerHTML = myQuestions[12].question;
+                document.getElementById("question-14").innerHTML = myQuestions[13].question;
+                document.getElementById("question-15").innerHTML = myQuestions[14].question;
             }
             else if (amount == 20) {
-                document.getElementById("question-1").innerHTML = data[0].question;
-                document.getElementById("question-2").innerHTML = data[1].question;
-                document.getElementById("question-3").innerHTML = data[2].question;
-                document.getElementById("question-4").innerHTML = data[3].question;
-                document.getElementById("question-5").innerHTML = data[4].question;
-                document.getElementById("question-6").innerHTML = data[5].question;
-                document.getElementById("question-7").innerHTML = data[6].question;
-                document.getElementById("question-8").innerHTML = data[7].question;
-                document.getElementById("question-9").innerHTML = data[8].question;
-                document.getElementById("question-10").innerHTML = data[9].question;
-                document.getElementById("question-11").innerHTML = data[10].question;
-                document.getElementById("question-12").innerHTML = data[11].question;
-                document.getElementById("question-13").innerHTML = data[12].question;
-                document.getElementById("question-14").innerHTML = data[13].question;
-                document.getElementById("question-15").innerHTML = data[14].question;
-                document.getElementById("question-16").innerHTML = data[15].question;
-                document.getElementById("question-17").innerHTML = data[16].question;
-                document.getElementById("question-18").innerHTML = data[17].question;
-                document.getElementById("question-19").innerHTML = data[18].question;
-                document.getElementById("question-20").innerHTML = data[19].question;
+                document.getElementById("question-1").innerHTML = myQuestions[0].question;
+                document.getElementById("question-2").innerHTML = myQuestions[1].question;
+                document.getElementById("question-3").innerHTML = myQuestions[2].question;
+                document.getElementById("question-4").innerHTML = myQuestions[3].question;
+                document.getElementById("question-5").innerHTML = myQuestions[4].question;
+                document.getElementById("question-6").innerHTML = myQuestions[5].question;
+                document.getElementById("question-7").innerHTML = myQuestions[6].question;
+                document.getElementById("question-8").innerHTML = myQuestions[7].question;
+                document.getElementById("question-9").innerHTML = myQuestions[8].question;
+                document.getElementById("question-10").innerHTML = myQuestions[9].question;
+                document.getElementById("question-11").innerHTML = myQuestions[10].question;
+                document.getElementById("question-12").innerHTML = myQuestions[11].question;
+                document.getElementById("question-13").innerHTML = myQuestions[12].question;
+                document.getElementById("question-14").innerHTML = myQuestions[13].question;
+                document.getElementById("question-15").innerHTML = myQuestions[14].question;
+                document.getElementById("question-16").innerHTML = myQuestions[15].question;
+                document.getElementById("question-17").innerHTML = myQuestions[16].question;
+                document.getElementById("question-18").innerHTML = myQuestions[17].question;
+                document.getElementById("question-19").innerHTML = myQuestions[18].question;
+                document.getElementById("question-20").innerHTML = myQuestions[19].question;
             }
         });
-        correctAns = [];
-        correctAns = data.map(item => {
-            correctAns[item.key] = item.correct_answer;
-            correctAns.forEach(function() {
-            });
-            
-        });
-        var rObj = data.map(obj => {
-            incorrectAns = [];
-            incorrectAns[obj.key] = obj.incorrect_answers;
-            
-        });
+        for (let i = 0; i < myQuestions.length; i++) {
+            correctAns = myQuestions[i].correct_answer;
+            incorrectAns = myQuestions[i].incorrect_answers;
+            answers = incorrectAns.concat(correctAns);
+            console.log(answers);
+        }
+        let radioBtns = document.querySelectorAll(".button-class");
+        console.log(radioBtns);
     });
 }
-
-
