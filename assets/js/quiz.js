@@ -4,6 +4,7 @@ var questions;
 var incorrectAns;
 var correctAns;
 var answers;
+let text;
 
 function hideUnusedSlides() {
     if (amount == 15) {
@@ -130,10 +131,30 @@ function displayQuestions(type) {
         for (let i = 0; i < myQuestions.length; i++) {
             correctAns = myQuestions[i].correct_answer;
             incorrectAns = myQuestions[i].incorrect_answers;
+            answers += [];
             answers = incorrectAns.concat(correctAns);
+            shuffleAns(answers);
+            displayAnswers();
             console.log(answers);
         }
-        let radioBtns = document.querySelectorAll(".button-class");
-        console.log(radioBtns);
-    });
+
+        function shuffleAns(answers) {
+            for (let i = answers.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [answers[i], answers[j]] = [answers[j], answers[i]];
+            }
+        }
+
+        function displayAnswers() {
+            for (var i = 0; i<answers.length; i++) {
+                document.getElementById("q1-choice-a").innerHTML = answers[0];
+                document.getElementById("q1-choice-b").innerHTML = answers[1];
+                document.getElementById("q1-choice-c").innerHTML = answers[2];
+                document.getElementById("q1-choice-d").innerHTML = answers[3];
+                document.getElementById("q2-choice-a").innerHTML = answers[0];
+            }
+                
+            }
+        }
+    );
 }
