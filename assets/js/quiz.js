@@ -5,6 +5,7 @@ var incorrectAns;
 var correctAns;
 var answers;
 let text;
+var allAnswers;
 
 function hideUnusedSlides() {
     if (amount == 15) {
@@ -67,7 +68,6 @@ function apiRequest(type, cb) {
 function displayQuestions(type) {
     apiRequest(type, function(data) {
         myQuestions = data.results;
-        console.log(myQuestions);
         myQuestions.forEach(function() {
             if (amount == 5) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
@@ -128,16 +128,16 @@ function displayQuestions(type) {
                 document.getElementById("question-20").innerHTML = myQuestions[19].question;
             }
         });
+        allAnswers = [];
         for (let i = 0; i < myQuestions.length; i++) {
             correctAns = myQuestions[i].correct_answer;
             incorrectAns = myQuestions[i].incorrect_answers;
-            answers += [];
             answers = incorrectAns.concat(correctAns);
             shuffleAns(answers);
-            displayAnswers();
+            allAnswers.push(answers);
             console.log(answers);
         }
-
+        displayAnswers();
         function shuffleAns(answers) {
             for (let i = answers.length - 1; i > 0; i--) {
                 let j = Math.floor(Math.random() * (i + 1));
@@ -146,15 +146,215 @@ function displayQuestions(type) {
         }
 
         function displayAnswers() {
-            for (var i = 0; i<answers.length; i++) {
-                document.getElementById("q1-choice-a").innerHTML = answers[0];
-                document.getElementById("q1-choice-b").innerHTML = answers[1];
-                document.getElementById("q1-choice-c").innerHTML = answers[2];
-                document.getElementById("q1-choice-d").innerHTML = answers[3];
-                document.getElementById("q2-choice-a").innerHTML = answers[0];
+            if (amount == 5) {
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
+                document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
+                document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
+                document.getElementById("q1-choice-d").innerHTML = allAnswers[0][3];
+                document.getElementById("q2-choice-a").innerHTML = allAnswers[1][0];
+                document.getElementById("q2-choice-b").innerHTML = allAnswers[1][1];
+                document.getElementById("q2-choice-c").innerHTML = allAnswers[1][2];
+                document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
+                document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
+                document.getElementById("q3-choice-c").innerHTML = allAnswers[2][2];
+                document.getElementById("q3-choice-d").innerHTML = allAnswers[2][3];
+                document.getElementById("q4-choice-a").innerHTML = allAnswers[3][0];
+                document.getElementById("q4-choice-b").innerHTML = allAnswers[3][1];
+                document.getElementById("q4-choice-c").innerHTML = allAnswers[3][2];
+                document.getElementById("q4-choice-d").innerHTML = allAnswers[3][3];
+                document.getElementById("q5-choice-a").innerHTML = allAnswers[4][0];
+                document.getElementById("q5-choice-b").innerHTML = allAnswers[4][1];
+                document.getElementById("q5-choice-c").innerHTML = allAnswers[4][2];
+                document.getElementById("q5-choice-d").innerHTML = allAnswers[4][3];
             }
-                
+            if (amount == 10) {
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
+                document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
+                document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
+                document.getElementById("q1-choice-d").innerHTML = allAnswers[0][3];
+                document.getElementById("q2-choice-a").innerHTML = allAnswers[1][0];
+                document.getElementById("q2-choice-b").innerHTML = allAnswers[1][1];
+                document.getElementById("q2-choice-c").innerHTML = allAnswers[1][2];
+                document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
+                document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
+                document.getElementById("q3-choice-c").innerHTML = allAnswers[2][2];
+                document.getElementById("q3-choice-d").innerHTML = allAnswers[2][3];
+                document.getElementById("q4-choice-a").innerHTML = allAnswers[3][0];
+                document.getElementById("q4-choice-b").innerHTML = allAnswers[3][1];
+                document.getElementById("q4-choice-c").innerHTML = allAnswers[3][2];
+                document.getElementById("q4-choice-d").innerHTML = allAnswers[3][3];
+                document.getElementById("q5-choice-a").innerHTML = allAnswers[4][0];
+                document.getElementById("q5-choice-b").innerHTML = allAnswers[4][1];
+                document.getElementById("q5-choice-c").innerHTML = allAnswers[4][2];
+                document.getElementById("q5-choice-d").innerHTML = allAnswers[4][3];
+                document.getElementById("q6-choice-a").innerHTML = allAnswers[5][0];
+                document.getElementById("q6-choice-b").innerHTML = allAnswers[5][1];
+                document.getElementById("q6-choice-c").innerHTML = allAnswers[5][2];
+                document.getElementById("q6-choice-d").innerHTML = allAnswers[5][3];
+                document.getElementById("q7-choice-a").innerHTML = allAnswers[6][0];
+                document.getElementById("q7-choice-b").innerHTML = allAnswers[6][1];
+                document.getElementById("q7-choice-c").innerHTML = allAnswers[6][2];
+                document.getElementById("q7-choice-d").innerHTML = allAnswers[6][3];
+                document.getElementById("q8-choice-a").innerHTML = allAnswers[7][0];
+                document.getElementById("q8-choice-b").innerHTML = allAnswers[7][1];
+                document.getElementById("q8-choice-c").innerHTML = allAnswers[7][2];
+                document.getElementById("q8-choice-d").innerHTML = allAnswers[7][3];
+                document.getElementById("q9-choice-a").innerHTML = allAnswers[8][0];
+                document.getElementById("q9-choice-b").innerHTML = allAnswers[8][1];
+                document.getElementById("q9-choice-c").innerHTML = allAnswers[8][2];
+                document.getElementById("q9-choice-d").innerHTML = allAnswers[8][3];
+                document.getElementById("q10-choice-a").innerHTML = allAnswers[9][0];
+                document.getElementById("q10-choice-b").innerHTML = allAnswers[9][1];
+                document.getElementById("q10-choice-c").innerHTML = allAnswers[9][2];
+                document.getElementById("q10-choice-d").innerHTML = allAnswers[9][3];
+            }
+            if (amount == 15) {
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
+                document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
+                document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
+                document.getElementById("q1-choice-d").innerHTML = allAnswers[0][3];
+                document.getElementById("q2-choice-a").innerHTML = allAnswers[1][0];
+                document.getElementById("q2-choice-b").innerHTML = allAnswers[1][1];
+                document.getElementById("q2-choice-c").innerHTML = allAnswers[1][2];
+                document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
+                document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
+                document.getElementById("q3-choice-c").innerHTML = allAnswers[2][2];
+                document.getElementById("q3-choice-d").innerHTML = allAnswers[2][3];
+                document.getElementById("q4-choice-a").innerHTML = allAnswers[3][0];
+                document.getElementById("q4-choice-b").innerHTML = allAnswers[3][1];
+                document.getElementById("q4-choice-c").innerHTML = allAnswers[3][2];
+                document.getElementById("q4-choice-d").innerHTML = allAnswers[3][3];
+                document.getElementById("q5-choice-a").innerHTML = allAnswers[4][0];
+                document.getElementById("q5-choice-b").innerHTML = allAnswers[4][1];
+                document.getElementById("q5-choice-c").innerHTML = allAnswers[4][2];
+                document.getElementById("q5-choice-d").innerHTML = allAnswers[4][3];
+                document.getElementById("q6-choice-a").innerHTML = allAnswers[5][0];
+                document.getElementById("q6-choice-b").innerHTML = allAnswers[5][1];
+                document.getElementById("q6-choice-c").innerHTML = allAnswers[5][2];
+                document.getElementById("q6-choice-d").innerHTML = allAnswers[5][3];
+                document.getElementById("q7-choice-a").innerHTML = allAnswers[6][0];
+                document.getElementById("q7-choice-b").innerHTML = allAnswers[6][1];
+                document.getElementById("q7-choice-c").innerHTML = allAnswers[6][2];
+                document.getElementById("q7-choice-d").innerHTML = allAnswers[6][3];
+                document.getElementById("q8-choice-a").innerHTML = allAnswers[7][0];
+                document.getElementById("q8-choice-b").innerHTML = allAnswers[7][1];
+                document.getElementById("q8-choice-c").innerHTML = allAnswers[7][2];
+                document.getElementById("q8-choice-d").innerHTML = allAnswers[7][3];
+                document.getElementById("q9-choice-a").innerHTML = allAnswers[8][0];
+                document.getElementById("q9-choice-b").innerHTML = allAnswers[8][1];
+                document.getElementById("q9-choice-c").innerHTML = allAnswers[8][2];
+                document.getElementById("q9-choice-d").innerHTML = allAnswers[8][3];
+                document.getElementById("q10-choice-a").innerHTML = allAnswers[9][0];
+                document.getElementById("q10-choice-b").innerHTML = allAnswers[9][1];
+                document.getElementById("q10-choice-c").innerHTML = allAnswers[9][2];
+                document.getElementById("q10-choice-d").innerHTML = allAnswers[9][3];
+                document.getElementById("q11-choice-a").innerHTML = allAnswers[10][0];
+                document.getElementById("q11-choice-b").innerHTML = allAnswers[10][1];
+                document.getElementById("q11-choice-c").innerHTML = allAnswers[10][2];
+                document.getElementById("q11-choice-d").innerHTML = allAnswers[10][3];
+                document.getElementById("q12-choice-a").innerHTML = allAnswers[11][0];
+                document.getElementById("q12-choice-b").innerHTML = allAnswers[11][1];
+                document.getElementById("q12-choice-c").innerHTML = allAnswers[11][2];
+                document.getElementById("q12-choice-d").innerHTML = allAnswers[11][3];
+                document.getElementById("q13-choice-a").innerHTML = allAnswers[12][0];
+                document.getElementById("q13-choice-b").innerHTML = allAnswers[12][1];
+                document.getElementById("q13-choice-c").innerHTML = allAnswers[12][2];
+                document.getElementById("q13-choice-d").innerHTML = allAnswers[12][3];
+                document.getElementById("q14-choice-a").innerHTML = allAnswers[13][0];
+                document.getElementById("q14-choice-b").innerHTML = allAnswers[13][1];
+                document.getElementById("q14-choice-c").innerHTML = allAnswers[13][2];
+                document.getElementById("q14-choice-d").innerHTML = allAnswers[13][3];
+                document.getElementById("q15-choice-a").innerHTML = allAnswers[14][0];
+                document.getElementById("q15-choice-b").innerHTML = allAnswers[14][1];
+                document.getElementById("q15-choice-c").innerHTML = allAnswers[14][2];
+                document.getElementById("q15-choice-d").innerHTML = allAnswers[14][3];
+            }
+            if (amount == 20) {
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
+                document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
+                document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
+                document.getElementById("q1-choice-d").innerHTML = allAnswers[0][3];
+                document.getElementById("q2-choice-a").innerHTML = allAnswers[1][0];
+                document.getElementById("q2-choice-b").innerHTML = allAnswers[1][1];
+                document.getElementById("q2-choice-c").innerHTML = allAnswers[1][2];
+                document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
+                document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
+                document.getElementById("q3-choice-c").innerHTML = allAnswers[2][2];
+                document.getElementById("q3-choice-d").innerHTML = allAnswers[2][3];
+                document.getElementById("q4-choice-a").innerHTML = allAnswers[3][0];
+                document.getElementById("q4-choice-b").innerHTML = allAnswers[3][1];
+                document.getElementById("q4-choice-c").innerHTML = allAnswers[3][2];
+                document.getElementById("q4-choice-d").innerHTML = allAnswers[3][3];
+                document.getElementById("q5-choice-a").innerHTML = allAnswers[4][0];
+                document.getElementById("q5-choice-b").innerHTML = allAnswers[4][1];
+                document.getElementById("q5-choice-c").innerHTML = allAnswers[4][2];
+                document.getElementById("q5-choice-d").innerHTML = allAnswers[4][3];
+                document.getElementById("q6-choice-a").innerHTML = allAnswers[5][0];
+                document.getElementById("q6-choice-b").innerHTML = allAnswers[5][1];
+                document.getElementById("q6-choice-c").innerHTML = allAnswers[5][2];
+                document.getElementById("q6-choice-d").innerHTML = allAnswers[5][3];
+                document.getElementById("q7-choice-a").innerHTML = allAnswers[6][0];
+                document.getElementById("q7-choice-b").innerHTML = allAnswers[6][1];
+                document.getElementById("q7-choice-c").innerHTML = allAnswers[6][2];
+                document.getElementById("q7-choice-d").innerHTML = allAnswers[6][3];
+                document.getElementById("q8-choice-a").innerHTML = allAnswers[7][0];
+                document.getElementById("q8-choice-b").innerHTML = allAnswers[7][1];
+                document.getElementById("q8-choice-c").innerHTML = allAnswers[7][2];
+                document.getElementById("q8-choice-d").innerHTML = allAnswers[7][3];
+                document.getElementById("q9-choice-a").innerHTML = allAnswers[8][0];
+                document.getElementById("q9-choice-b").innerHTML = allAnswers[8][1];
+                document.getElementById("q9-choice-c").innerHTML = allAnswers[8][2];
+                document.getElementById("q9-choice-d").innerHTML = allAnswers[8][3];
+                document.getElementById("q10-choice-a").innerHTML = allAnswers[9][0];
+                document.getElementById("q10-choice-b").innerHTML = allAnswers[9][1];
+                document.getElementById("q10-choice-c").innerHTML = allAnswers[9][2];
+                document.getElementById("q10-choice-d").innerHTML = allAnswers[9][3];
+                document.getElementById("q11-choice-a").innerHTML = allAnswers[10][0];
+                document.getElementById("q11-choice-b").innerHTML = allAnswers[10][1];
+                document.getElementById("q11-choice-c").innerHTML = allAnswers[10][2];
+                document.getElementById("q11-choice-d").innerHTML = allAnswers[10][3];
+                document.getElementById("q12-choice-a").innerHTML = allAnswers[11][0];
+                document.getElementById("q12-choice-b").innerHTML = allAnswers[11][1];
+                document.getElementById("q12-choice-c").innerHTML = allAnswers[11][2];
+                document.getElementById("q12-choice-d").innerHTML = allAnswers[11][3];
+                document.getElementById("q13-choice-a").innerHTML = allAnswers[12][0];
+                document.getElementById("q13-choice-b").innerHTML = allAnswers[12][1];
+                document.getElementById("q13-choice-c").innerHTML = allAnswers[12][2];
+                document.getElementById("q13-choice-d").innerHTML = allAnswers[12][3];
+                document.getElementById("q14-choice-a").innerHTML = allAnswers[13][0];
+                document.getElementById("q14-choice-b").innerHTML = allAnswers[13][1];
+                document.getElementById("q14-choice-c").innerHTML = allAnswers[13][2];
+                document.getElementById("q14-choice-d").innerHTML = allAnswers[13][3];
+                document.getElementById("q15-choice-a").innerHTML = allAnswers[14][0];
+                document.getElementById("q15-choice-b").innerHTML = allAnswers[14][1];
+                document.getElementById("q15-choice-c").innerHTML = allAnswers[14][2];
+                document.getElementById("q15-choice-d").innerHTML = allAnswers[14][3];
+                document.getElementById("q16-choice-a").innerHTML = allAnswers[15][0];
+                document.getElementById("q16-choice-b").innerHTML = allAnswers[15][1];
+                document.getElementById("q16-choice-c").innerHTML = allAnswers[15][2];
+                document.getElementById("q16-choice-d").innerHTML = allAnswers[15][3];
+                document.getElementById("q17-choice-a").innerHTML = allAnswers[16][0];
+                document.getElementById("q17-choice-b").innerHTML = allAnswers[16][1];
+                document.getElementById("q17-choice-c").innerHTML = allAnswers[16][2];
+                document.getElementById("q17-choice-d").innerHTML = allAnswers[16][3];
+                document.getElementById("q18-choice-a").innerHTML = allAnswers[17][0];
+                document.getElementById("q18-choice-b").innerHTML = allAnswers[17][1];
+                document.getElementById("q18-choice-c").innerHTML = allAnswers[17][2];
+                document.getElementById("q18-choice-d").innerHTML = allAnswers[17][3];
+                document.getElementById("q19-choice-a").innerHTML = allAnswers[18][0];
+                document.getElementById("q19-choice-b").innerHTML = allAnswers[18][1];
+                document.getElementById("q19-choice-c").innerHTML = allAnswers[18][2];
+                document.getElementById("q19-choice-d").innerHTML = allAnswers[18][3];
+                document.getElementById("q20-choice-a").innerHTML = allAnswers[19][0];
+                document.getElementById("q20-choice-b").innerHTML = allAnswers[19][1];
+                document.getElementById("q20-choice-c").innerHTML = allAnswers[19][2];
+                document.getElementById("q20-choice-d").innerHTML = allAnswers[19][3];
             }
         }
-    );
+    });
 }
+
