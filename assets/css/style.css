@@ -328,7 +328,7 @@ footer {
   padding-top: 20px;
   text-align: center;
   margin: auto;
-  width: 50%;
+  width: 70%;
 }
 
 
@@ -360,4 +360,27 @@ td {
   background-color: white;
   text-align: center;
   width: 30%;
+}
+
+.modal-heading {
+  text-align: center;
+  margin-top: 8px;
+  border-bottom: solid 1px;
+}
+
+.modal-form {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  
+}
+
+#scorePercent {
+  text-align: center;
+  margin-top: 8px;
+}
+
+#footer-btns {
+  text-align: center;
+  margin-bottom: 10px;
 }

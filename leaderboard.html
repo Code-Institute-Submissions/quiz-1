@@ -11,22 +11,30 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/modal-score.js"></script>
+    <script type="text/javascript" src="assets/js/leaderboard.js"></script>
     <title>Quiz</title>
 </head>
 
-<body>
+<body onload="score();">
     <div class="container-fluid home">
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Congratulations<br>Your score is</h5>
+                    <div class="modal-heading">
+                        <h1>Congratulations<br>Your score is</h1>
                     </div>
-                    <div class="modal-body">
-                        ...
+                    <div>
+                        <h2 id="scorePercent"></h2>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Show Leaderboard</button>
+                    <div class="modal-form">
+                        <form>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username"/><br>
+                            <input type="submit" name="username" id="username" />
+                        </form>
+                    </div>
+                    <div id="footer-btns">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Show Leaderboard</button>
                         <a href="load.html" class="load-button">Play Again</a>
                     </div>
                 </div>
@@ -42,28 +50,28 @@
                 </tr>
                 <tr>
                     <td>1st</td>
-                    <td></td>
-                    <td></td>
+                    <td id="username-1"></td>
+                    <td id="score-1"></td>
                 </tr>
                 <tr>
                     <td>2nd</td>
-                    <td></td>
-                    <td></td>
+                    <td id="username-2"></td>
+                    <td id="score-2"></td>
                 </tr>
                 <tr>
                     <td>3rd</td>
-                    <td></td>
-                    <td></td>
+                    <td id="username-3"></td>
+                    <td id="score-3"></td>
                 </tr>
                 <tr>
                     <td>4th</td>
-                    <td></td>
-                    <td></td>
+                    <td id="username-4"></td>
+                    <td id="score-4"></td>
                 </tr>
                 <tr>
                     <td>5th</td>
-                    <td></td>
-                    <td></td>
+                    <td id="username-5"></td>
+                    <td id="score-5"></td>
                 </tr>
             </table>
         </div>
