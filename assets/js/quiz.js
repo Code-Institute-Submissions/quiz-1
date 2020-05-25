@@ -64,11 +64,10 @@ function apiRequest(type, cb) {
     amount = sessionStorage.getItem('amount');
     var category = sessionStorage.getItem('category');
     var difficulty = sessionStorage.getItem('difficulty');
-    var type = sessionStorage.getItem('type');
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`);
+    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`);
     xhr.send();
 
     xhr.onreadystatechange = function() {
@@ -572,17 +571,6 @@ function displayQuestions(type) {
     });
 }
 
-function audioCorrect() {
-    var audioCorrect = new Audio('assets/audio/correct.wav');
-    
-    audioCorrect.play();
-}
-
-function audioIncorrect() {
-    var audioIncorrect = new Audio('assets/audio/incorrect.mp3');
-    
-    audioIncorrect.play();
-}
 
 
 
@@ -902,5 +890,5 @@ function correctOrIncorrect() {
         }
     }
     console.log(score);
-    localStorage.setItem('score', score);
+    localStorage.setItem('mostRecentScore', score);
 }

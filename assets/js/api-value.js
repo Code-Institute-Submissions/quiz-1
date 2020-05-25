@@ -8,12 +8,10 @@ function apiValues() {
     amount = $("#amount option:selected").data("amount");
     category = $("#category option:selected").data("category");
     difficulty = $("#difficulty option:selected").data("difficulty");
-    type = $("#type option:selected").data("type");
 
     sessionStorage.setItem('amount', amount);
     sessionStorage.setItem('category', category);
     sessionStorage.setItem('difficulty', difficulty);
-    sessionStorage.setItem('type', type);
 
 }
 
@@ -25,4 +23,8 @@ function timeDelay() {
     }, 6000);
 }
 
-console.log(amount);
+function getUsername() {
+    var username = document.getElementById("username").value;
+    console.log(username);
+    localStorage.setItem("username", username);
+}

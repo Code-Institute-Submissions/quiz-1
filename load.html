@@ -18,43 +18,42 @@
 <body>
     <div class="container-fluid home">
         <div>
-            <select class="select-amount" id="amount" onchange="apiValues()">
-                <option data-amount="5">5</option>
-                <option data-amount="10">10</option>
-                <option data-amount="15">15</option>
-                <option data-amount="20">20</option>
-            </select>
-            <select class="select-category" id="category" onchange="apiValues();">
-                <option data-category="9">General Knowledge</option>
-                <option data-category="10">Books</option>
-                <option data-category="11">Films</option>
-                <option data-category="12">Music</option>
-                <option data-category="13">Musicals</option>
-                <option data-category="14">Television</option>
-                <option data-category="15">Video Games</option>
-                <option data-category="16">Board Games</option>
-                <option data-category="17">Science & Nature</option>
-                <option data-category="18">Computers</option>
-                <option data-category="19">Mathematics</option>
-                <option data-category="20">Mythology</option>
-                <option data-category="21">Sports</option>
-                <option data-category="22">Geography</option>
-                <option data-category="23">History</option>
-                <option data-category="24">Politics</option>
-                <option data-category="25">Art</option>
-                <option data-category="26">Celebrities</option>
-                <option data-category="27">Animals</option>
-                <option data-category="28">Vehicles</option>
-            </select>
-            <select class="select-difficulty" id="difficulty" onchange="apiValues();">
-                <option data-difficulty="easy">Easy</option>
-                <option data-difficulty="medium">Medium</option>
-                <option data-difficulty="hard">Hard</option>
-            </select>
-            <select class="select-type" id="type" onchange="apiValues();">
-                <option data-type="multiple">Multiple Choice</option>
-                <option data-type="boolean">True/False</option>
-            </select>
+            <form>
+                <input type="text" name="username" id="username" placeholder="username" class="username" oninput="getUsername()" required/>
+                <select class="select-amount" id="amount" onchange="apiValues()">
+                    <option data-amount="5">5</option>
+                    <option data-amount="10">10</option>
+                    <option data-amount="15">15</option>
+                    <option data-amount="20">20</option>
+                </select>
+                <select class="select-category" id="category" onchange="apiValues();">
+                    <option data-category="9">General Knowledge</option>
+                    <option data-category="10">Books</option>
+                    <option data-category="11">Films</option>
+                    <option data-category="12">Music</option>
+                    <option data-category="13">Musicals</option>
+                    <option data-category="14">Television</option>
+                    <option data-category="15">Video Games</option>
+                    <option data-category="16">Board Games</option>
+                    <option data-category="17">Science & Nature</option>
+                    <option data-category="18">Computers</option>
+                    <option data-category="19">Mathematics</option>
+                    <option data-category="20">Mythology</option>
+                    <option data-category="21">Sports</option>
+                    <option data-category="22">Geography</option>
+                    <option data-category="23">History</option>
+                    <option data-category="24">Politics</option>
+                    <option data-category="25">Art</option>
+                    <option data-category="26">Celebrities</option>
+                    <option data-category="27">Animals</option>
+                    <option data-category="28">Vehicles</option>
+                </select>
+                <select class="select-difficulty" id="difficulty" onchange="apiValues();">
+                    <option data-difficulty="easy">Easy</option>
+                    <option data-difficulty="medium">Medium</option>
+                    <option data-difficulty="hard">Hard</option>
+                </select>
+            </form>
         </div>
         <div class="container-fluid load">
             <button type="button" onclick="timeDelay();" class="load-button" data-toggle="modal" data-target="#exampleModalCenter">
