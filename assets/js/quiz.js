@@ -12,12 +12,17 @@ function quizMusic() {
     quizMusic.play();
 }
 
-function enableMute() {
-    quizMusic.pause();
-}
-
-function disableMute() {
-    quizMusic.play();
+function mute() {
+    if (document.getElementById("mute").value == "off") {
+        document.getElementById("mute").value = "on";
+        document.getElementById("mute-icon").className = "fa fa-volume-up fa-2x";
+        quizMusic.play();
+    }
+    else if (document.getElementById("mute").value == "on") {
+        document.getElementById("mute").value = "off";
+        document.getElementById("mute-icon").className = "fa fa-volume-off fa-2x";
+        quizMusic.pause();
+    }
 }
 
 function hideUnusedSlides() {
@@ -571,322 +576,432 @@ function displayQuestions(type) {
     });
 }
 
+function disableRadioBtns() {
+    if (amount == 5) {
+        $(":radio[name='answer-1']").attr("disabled", true);
+        $(":radio[name='answer-2']").attr("disabled", true);
+        $(":radio[name='answer-3']").attr("disabled", true);
+        $(":radio[name='answer-4']").attr("disabled", true);
+        $(":radio[name='answer-5']").attr("disabled", true);
+    }
+    if (amount == 10) {
+        $(":radio[name='answer-1']").attr("disabled", true);
+        $(":radio[name='answer-2']").attr("disabled", true);
+        $(":radio[name='answer-3']").attr("disabled", true);
+        $(":radio[name='answer-4']").attr("disabled", true);
+        $(":radio[name='answer-5']").attr("disabled", true);
+        $(":radio[name='answer-6']").attr("disabled", true);
+        $(":radio[name='answer-7']").attr("disabled", true);
+        $(":radio[name='answer-8']").attr("disabled", true);
+        $(":radio[name='answer-9']").attr("disabled", true);
+        $(":radio[name='answer-10']").attr("disabled", true);
+    }
+    if (amount == 15) {
+        $(":radio[name='answer-1']").attr("disabled", true);
+        $(":radio[name='answer-2']").attr("disabled", true);
+        $(":radio[name='answer-3']").attr("disabled", true);
+        $(":radio[name='answer-4']").attr("disabled", true);
+        $(":radio[name='answer-5']").attr("disabled", true);
+        $(":radio[name='answer-6']").attr("disabled", true);
+        $(":radio[name='answer-7']").attr("disabled", true);
+        $(":radio[name='answer-8']").attr("disabled", true);
+        $(":radio[name='answer-9']").attr("disabled", true);
+        $(":radio[name='answer-10']").attr("disabled", true);
+        $(":radio[name='answer-11']").attr("disabled", true);
+        $(":radio[name='answer-12']").attr("disabled", true);
+        $(":radio[name='answer-13']").attr("disabled", true);
+        $(":radio[name='answer-14']").attr("disabled", true);
+        $(":radio[name='answer-15']").attr("disabled", true);
+    }
+    if (amount == 20) {
+        $(":radio[name='answer-1']").attr("disabled", true);
+        $(":radio[name='answer-2']").attr("disabled", true);
+        $(":radio[name='answer-3']").attr("disabled", true);
+        $(":radio[name='answer-4']").attr("disabled", true);
+        $(":radio[name='answer-5']").attr("disabled", true);
+        $(":radio[name='answer-6']").attr("disabled", true);
+        $(":radio[name='answer-7']").attr("disabled", true);
+        $(":radio[name='answer-8']").attr("disabled", true);
+        $(":radio[name='answer-9']").attr("disabled", true);
+        $(":radio[name='answer-10']").attr("disabled", true);
+        $(":radio[name='answer-11']").attr("disabled", true);
+        $(":radio[name='answer-12']").attr("disabled", true);
+        $(":radio[name='answer-13']").attr("disabled", true);
+        $(":radio[name='answer-14']").attr("disabled", true);
+        $(":radio[name='answer-15']").attr("disabled", true);
+        $(":radio[name='answer-16']").attr("disabled", true);
+        $(":radio[name='answer-17']").attr("disabled", true);
+        $(":radio[name='answer-18']").attr("disabled", true);
+        $(":radio[name='answer-19']").attr("disabled", true);
+        $(":radio[name='answer-20']").attr("disabled", true);
+    }
+}
 
 
 
 
 function correctOrIncorrect() {
     score = 0;
-    
-    if (amount == 5 ) {
+
+    if (amount == 5) {
         if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
             score++;
-            audioCorrect();
-        } else {
-            audioIncorrect();
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
             score++;
-            audioCorrect();
-        } else {
-            audioIncorrect();
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
             score++;
-            audioCorrect();
-        } else {
-            audioIncorrect();
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
             score++;
-            audioCorrect();
-        } else {
-            audioIncorrect();
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
             score++;
-            audioCorrect();
-        } else {
-            audioIncorrect();
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
     }
-    
+
     if (amount == 10) {
         if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
     }
-    
-    if (amount== 15){
-         if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
+
+    if (amount == 15) {
+        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-11"]:checked').value === myQuestions[10].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-12"]:checked').value === myQuestions[11].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-13"]:checked').value === myQuestions[12].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-14"]:checked').value === myQuestions[13].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-15"]:checked').value === myQuestions[14].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
     }
-    
+
     if (amount == 20) {
         if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-11"]:checked').value === myQuestions[10].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-12"]:checked').value === myQuestions[11].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-13"]:checked').value === myQuestions[12].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-14"]:checked').value === myQuestions[13].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-15"]:checked').value === myQuestions[14].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-16"]:checked').value === myQuestions[15].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-16").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-16").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-17"]:checked').value === myQuestions[16].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-17").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-17").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-18"]:checked').value === myQuestions[17].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-18").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-18").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-19"]:checked').value === myQuestions[18].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-19").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-19").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
         if (document.querySelector('input[name="answer-20"]:checked').value === myQuestions[19].correct_answer) {
             score++;
-            audioCorrect.play();
-        } else {
-            audioIncorrect.play();
+            document.getElementById("correct/incorrect-20").innerHTML = "<img src='assets/images/correct.png'>";
+        }
+        else {
+            document.getElementById("correct/incorrect-20").innerHTML = "<img src='assets/images/incorrect.png'>";
         }
     }
     console.log(score);

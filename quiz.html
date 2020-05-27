@@ -16,11 +16,9 @@
 </head>
 
 <body onload="displayQuestions(); hideUnusedSlides(); quizMusic(); ">
-    <div class="container-fluid home">
+    <div class="container-fluid background-quiz">
         <div class="container-fluid mute-button">
-            <button class="btn" onclick="disableMute()"><i class="fa fa-volume-up fa-2x"></i></button>
-            <button class="btn" onclick="enableMute()"><i class="fa fa-volume-off fa-2x"></i></button>
-            
+            <button class="btn" onclick="mute()" id="mute" value="on"><i class="fa fa-volume-up fa-2x" id="mute-icon"></i></button>
         </div>
         <div class="container-fluid countdown-quiz">
             <div class="square">
@@ -33,361 +31,361 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <h2 id="question-1"></h2>
+                    <h4 id="question-1"></h4>
                     <div id="answers-1">
                         <form id="form1">
                             <label for="" id="q1-choice-a"></label>
-                            <input type="radio" name="answer-1" id="q1-input-a" onclick="correctOrIncorrect();" />
+                            <input type="radio" name="answer-1" id="q1-input-a" onclick="correctOrIncorrect(); disableRadioBtns()" /><br>
                             <label for="b" id="q1-choice-b"></label>
-                            <input type="radio" name="answer-1" id="q1-input-b" onclick="correctOrIncorrect();" /><br>
+                            <input type="radio" name="answer-1" id="q1-input-b" onclick="correctOrIncorrect(); disableRadioBtns()" /><br>
                             <label for="c" id="q1-choice-c"></label>
-                            <input type="radio" name="answer-1" id="q1-input-c" onclick="correctOrIncorrect();" />
+                            <input type="radio" name="answer-1" id="q1-input-c" onclick="correctOrIncorrect(); disableRadioBtns()" /><br>
                             <label for="d" id="q1-choice-d"></label>
-                            <input type="radio" name="answer-1" id="q1-input-d" onclick="correctOrIncorrect();" />
+                            <input type="radio" name="answer-1" id="q1-input-d" onclick="correctOrIncorrect(); disableRadioBtns()" /><br>
                         </form>
-                        <div id="correct/incorrect-1">
+                        <div id="correct/incorrect-1" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question-2"></h2>
+                    <h4 id="question-2"></h4>
                     <div id="answers-2">
                         <form id="form2">
                             <label for="a" id="q2-choice-a"></label>
-                            <input type="radio" name="answer-2" id="q2-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-2" id="q2-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q2-choice-b"></label>
-                            <input type="radio" name="answer-2" id="q2-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-2" id="q2-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q2-choice-c"></label>
-                            <input type="radio" name="answer-2" id="q2-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-2" id="q2-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q2-choice-d"></label>
-                            <input type="radio" name="answer-2" id="q2-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-2" id="q2-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-2">
+                        <div id="correct/incorrect-2" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question-3"></h2>
+                    <h4 id="question-3"></h4>
                     <div id="answers-3">
                         <form id="form3">
                             <label for="a" id="q3-choice-a"></label>
-                            <input type="radio" name="answer-3" id="q3-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-3" id="q3-input-a"  onclick="correctOrIncorrect();disableRadioBtns()"/><br>
                             <label for="b" id="q3-choice-b"></label>
-                            <input type="radio" name="answer-3" id="q3-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-3" id="q3-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q3-choice-c"></label>
-                            <input type="radio" name="answer-3" id="q3-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-3" id="q3-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q3-choice-d"></label>
-                            <input type="radio" name="answer-3" id="q3-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-3" id="q3-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-3">
+                        <div id="correct/incorrect-3" class=" container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question-4"></h2>
+                    <h4 id="question-4"></h4>
                     <div id="answers-4">
                         <form id="form4">
                             <label for="a" id="q4-choice-a"></label>
-                            <input type="radio" name="answer-4" id="q4-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-4" id="q4-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q4-choice-b"></label>
-                            <input type="radio" name="answer-4" id="q4-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-4" id="q4-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q4-choice-c"></label>
-                            <input type="radio" name="answer-4" id="q4-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-4" id="q4-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q4-choice-d"></label>
-                            <input type="radio" name="answer-4" id="q4-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-4" id="q4-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-4">
+                        <div id="correct/incorrect-4" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <h2 id="question-5"></h2>
+                    <h4 id="question-5"></h4>
                     <div id="answers-5">
                         <form id="form5">
                             <label for="a" id="q5-choice-a"></label>
-                            <input type="radio" name="answer-5" id="q5-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-5" id="q5-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q5-choice-b"></label>
-                            <input type="radio" name="answer-5" id="q5-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-5" id="q5-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q5-choice-c"></label>
-                            <input type="radio" name="answer-5" id="q5-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-5" id="q5-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q5-choice-d"></label>
-                            <input type="radio" name="answer-5" id="q5-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-5" id="q5-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-5">
+                        <div id="correct/incorrect-5" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-6">
-                    <h2 id="question-6"></h2>
+                    <h4 id="question-6"></h4>
                     <div id="answers-6">
                         <form id="form6">
                             <label for="a" id="q6-choice-a"></label>
-                            <input type="radio" name="answer-6" id="q6-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-6" id="q6-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q6-choice-b"></label>
-                            <input type="radio" name="answer-6" id="q6-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-6" id="q6-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q6-choice-c"></label>
-                            <input type="radio" name="answer-6" id="q6-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-6" id="q6-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q6-choice-d"></label>
-                            <input type="radio" name="answer-6" id="q6-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-6" id="q6-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-6">
+                        <div id="correct/incorrect-6" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-7">
-                    <h2 id="question-7"></h2>
+                    <h4 id="question-7"></h4>
                     <div id="answers-7">
                         <form id="form7">
                             <label for="a" id="q7-choice-a"></label>
-                            <input type="radio" name="answer-7" id="q7-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-7" id="q7-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q7-choice-b"></label>
-                            <input type="radio" name="answer-7" id="q7-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-7" id="q7-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q7-choice-c"></label>
-                            <input type="radio" name="answer-7" id="q7-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-7" id="q7-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q7-choice-d"></label>
-                            <input type="radio" name="answer-7" id="q7-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-7" id="q7-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-7">
+                        <div id="correct/incorrect-7" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-8">
-                    <h2 id="question-8"></h2>
+                    <h4 id="question-8"></h4>
                     <div id="answers-8">
                         <form id="form8">
                             <label for="a" id="q8-choice-a"></label>
-                            <input type="radio" name="answer-8" id="q8-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-8" id="q8-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q8-choice-b"></label>
-                            <input type="radio" name="answer-8" id="q8-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-8" id="q8-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q8-choice-c"></label>
-                            <input type="radio" name="answer-8" id="q8-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-8" id="q8-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q8-choice-d"></label>
-                            <input type="radio" name="answer-8" id="q8-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-8" id="q8-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-8">
+                        <div id="correct/incorrect-8" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-9">
-                    <h2 id="question-9"></h2>
+                    <h4 id="question-9"></h4>
                     <div id="answers-9">
                         <form id="form9">
                             <label for="a" id="q9-choice-a"></label>
-                            <input type="radio" name="answer-9" id="q9-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-9" id="q9-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q9-choice-b"></label>
-                            <input type="radio" name="answer-9" id="q9-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-9" id="q9-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q9-choice-c"></label>
-                            <input type="radio" name="answer-9" id="q9-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-9" id="q9-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q9-choice-d"></label>
-                            <input type="radio" name="answer-9" id="q9-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-9" id="q9-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-9">
+                        <div id="correct/incorrect-9" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-10">
-                    <h2 id="question-10"></h2>
+                    <h4 id="question-10"></h4>
                     <div id="answers-10">
                         <form id="form10">
                             <label for="a" id="q10-choice-a"></label>
-                            <input type="radio" name="answer-10" id="q10-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-10" id="q10-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q10-choice-b"></label>
-                            <input type="radio" name="answer-10" id="q10-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-10" id="q10-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q10-choice-c"></label>
-                            <input type="radio" name="answer-10" id="q10-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-10" id="q10-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q10-choice-d"></label>
-                            <input type="radio" name="answer-10" id="q10-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-10" id="q10-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-10">
+                        <div id="correct/incorrect-10" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-11">
-                    <h2 id="question-11"></h2>
+                    <h4 id="question-11"></h4>
                     <div id="answers-11">
                         <form id="form11">
                             <label for="a" id="q11-choice-a"></label>
-                            <input type="radio" name="answer-11" id="q11-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-11" id="q11-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q11-choice-b"></label>
-                            <input type="radio" name="answer-11" id="q11-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-11" id="q11-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q11-choice-c"></label>
-                            <input type="radio" name="answer-11" id="q11-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-11" id="q11-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q11-choice-d"></label>
-                            <input type="radio" name="answer-11" id="q11-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-11" id="q11-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-11">
+                        <div id="correct/incorrect-11" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-12">
-                    <h2 id="question-12"></h2>
+                    <h4 id="question-12"></h4>
                     <div id="answers-12">
                         <form id="form12">
                             <label for="a" id="q12-choice-a"></label>
-                            <input type="radio" name="answer-12" id="q12-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-12" id="q12-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q12-choice-b"></label>
-                            <input type="radio" name="answer-12" id="q12-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-12" id="q12-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q12-choice-c"></label>
-                            <input type="radio" name="answer-12" id="q12-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-12" id="q12-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q12-choice-d"></label>
-                            <input type="radio" name="answer-12" id="q12-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-12" id="q12-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-12">
+                        <div id="correct/incorrect-12" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-13">
-                    <h2 id="question-13"></h2>
+                    <h4 id="question-13"></h4>
                     <div id="answers-13">
                         <form id="form13">
                             <label for="a" id="q13-choice-a"></label>
-                            <input type="radio" name="answer-13" id="q13-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-13" id="q13-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q13-choice-b"></label>
-                            <input type="radio" name="answer-13" id="q13-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-13" id="q13-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q13-choice-c"></label>
-                            <input type="radio" name="answer-13" id="q13-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-13" id="q13-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q13-choice-d"></label>
-                            <input type="radio" name="answer-13" id="q13-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-13" id="q13-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-13">
+                        <div id="correct/incorrect-13" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-14">
-                    <h2 id="question-14"></h2>
+                    <h4 id="question-14"></h4>
                     <div id="answers-14">
                         <form id="form14">
                             <label for="a" id="q14-choice-a"></label>
-                            <input type="radio" name="answer-14" id="q14-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-14" id="q14-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q14-choice-b"></label>
-                            <input type="radio" name="answer-14" id="q14-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-14" id="q14-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q14-choice-c"></label>
-                            <input type="radio" name="answer-14" id="q14-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-14" id="q14-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q14-choice-d"></label>
-                            <input type="radio" name="answer-14" id="q14-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-14" id="q14-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-14">
+                        <div id="correct/incorrect-14" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-15">
-                    <h2 id="question-15"></h2>
+                    <h4 id="question-15"></h4>
                     <div id="answers-15">
                         <form id="form15">
                             <label for="a" id="q15-choice-a"></label>
-                            <input type="radio" name="answer-15" id="q15-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-15" id="q15-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q15-choice-b"></label>
-                            <input type="radio" name="answer-15" id="q15-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-15" id="q15-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q15-choice-c"></label>
-                            <input type="radio" name="answer-15" id="q15-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-15" id="q15-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q15-choice-d"></label>
-                            <input type="radio" name="answer-15" id="q15-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-15" id="q15-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-15">
+                        <div id="correct/incorrect-15" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-16">
-                    <h2 id="question-16"></h2>
+                    <h4 id="question-16"></h4>
                     <div id="answers-16">
                         <form id="form16">
                             <label for="a" id="q16-choice-a"></label>
-                            <input type="radio" name="answer-16" id="q16-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-16" id="q16-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q16-choice-b"></label>
-                            <input type="radio" name="answer-16" id="q16-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-16" id="q16-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q16-choice-c"></label>
-                            <input type="radio" name="answer-16" id="q16-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-16" id="q16-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q16-choice-d"></label>
-                            <input type="radio" name="answer-16" id="q16-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-16" id="q16-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-16">
+                        <div id="correct/incorrect-16" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-17">
-                    <h2 id="question-17"></h2>
+                    <h4 id="question-17"></h4>
                     <div id="answers-17">
                         <form id="form17">
                             <label for="a" id="q17-choice-a"></label>
-                            <input type="radio" name="answer-17" id="q17-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-17" id="q17-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q17-choice-b"></label>
-                            <input type="radio" name="answer-17" id="q17-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-17" id="q17-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q17-choice-c"></label>
-                            <input type="radio" name="answer-17" id="q17-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-17" id="q17-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q17-choice-d"></label>
-                            <input type="radio" name="answer-17" id="q17-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-17" id="q17-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-17">
+                        <div id="correct/incorrect-17" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-18">
-                    <h2 id="question-18"></h2>
+                    <h4 id="question-18"></h4>
                     <div id="answers-18">
                         <form id="form18">
                             <label for="a" id="q18-choice-a"></label>
-                            <input type="radio" name="answer-18" id="q18-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-18" id="q18-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q18-choice-b"></label>
-                            <input type="radio" name="answer-18" id="q18-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-18" id="q18-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q18-choice-c"></label>
-                            <input type="radio" name="answer-18" id="q18-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-18" id="q18-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q18-choice-d"></label>
-                            <input type="radio" name="answer-18" id="q18-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-18" id="q18-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-18">
+                        <div id="correct/incorrect-18" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-19">
-                    <h2 id="question-19"></h2>
+                    <h4 id="question-19"></h4>
                     <div id="answers-19">
                         <form id="form19">
                             <label for="a" id="q19-choice-a"></label>
-                            <input type="radio" name="answer-19" id="q19-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-19" id="q19-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q19-choice-b"></label>
-                            <input type="radio" name="answer-19" id="q19-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-19" id="q19-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q19-choice-c"></label>
-                            <input type="radio" name="answer-19" id="q19-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-19" id="q19-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q19-choice-d"></label>
-                            <input type="radio" name="answer-19" id="q19-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-19" id="q19-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-19">
+                        <div id="correct/incorrect-19" class="container-fluid image-display">
                             
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" id="slide-20">
-                    <h2 id="question-20"></h2>
+                <div class="carousel-item" id="slide-20" >
+                    <h4 id="question-20"></h4>
                     <div id="answers-20">
                         <form id="form20">
                             <label for="a" id="q20-choice-a"></label>
-                            <input type="radio" name="answer-20" id="q20-input-a"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-20" id="q20-input-a"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="b" id="q20-choice-b"></label>
-                            <input type="radio" name="answer-20" id="q20-input-b"  onclick="correctOrIncorrect();"/><br>
+                            <input type="radio" name="answer-20" id="q20-input-b"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="c" id="q20-choice-c"></label>
-                            <input type="radio" name="answer-20" id="q20-input-c"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-20" id="q20-input-c"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                             <label for="d" id="q20-choice-d"></label>
-                            <input type="radio" name="answer-20" id="q20-input-d"  onclick="correctOrIncorrect();"/>
+                            <input type="radio" name="answer-20" id="q20-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><br>
                         </form>
-                        <div id="correct/incorrect-20">
+                        <div id="correct/incorrect-20" class="container-fluid image-display">
                             
                         </div>
                     </div>
@@ -402,7 +400,7 @@
             <span>Next</span>
           </a>
         </div>
-        <div class="container-fluid load">
+        <div class="container-fluid finish">
             <a href="leaderboard.html" class="load-button">Finish</a>
         </div>
     </div>
@@ -413,37 +411,37 @@
                 <ul class="list-inline social-links">
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-facebook fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-twitter fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-linkedin fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-pinterest fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-pinterest fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">pinterest</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-instagram fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-youtube fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-youtube fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Youtube</span>
                         </a>
                     </li>

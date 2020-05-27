@@ -5,13 +5,15 @@ var sad = new Audio('assets/audio/sadtrombone.wav');
 var scorePercent;
 var username = localStorage.getItem("username");
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var scorePercentRound;
 
 console.log(highScores);
 
 function scorePercent() {
 
     scorePercent = (mostRecentScore / amount) * 100;
-    document.getElementById("scorePercent").innerHTML = scorePercent + "%";
+    scorePercentRound = Math.round(scorePercent);
+    document.getElementById("scorePercentRound").innerHTML = scorePercent + "%";
 }
 
 
@@ -19,7 +21,7 @@ function scorePercent() {
 function saveHighScore() {
     const score = {
         name: username,
-        score: scorePercent
+        score: scorePercentRound
         };
     console.log(score);
     highScores.push(score);
@@ -28,7 +30,7 @@ function saveHighScore() {
     
     localStorage.setItem("highScores", JSON.stringify(highScores));
     
-    if (scorePercent > highScores[4].score || highScores[4] === "undefined") {
+    if (scorePercentRound >= highScores[4].score || highScores[4] === "undefined") {
         tada.play();
     } else {
         sad.play();

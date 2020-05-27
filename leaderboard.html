@@ -16,7 +16,7 @@
 </head>
 
 <body onload="scorePercent()">
-    <div class="container-fluid home">
+    <div class="container-fluid background-leaderboard">
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -24,11 +24,11 @@
                         <h1>Congratulations<br>Your score is</h1>
                     </div>
                     <div>
-                        <h2 id="scorePercent"></h2>
+                        <h2 id="scorePercentRound"></h2>
                     </div>
                     <div class="modal-form">
                         <form>
-                            <button type="submit" name="username" id="saveScoreBtn" class="btn btn-primary" onclick="saveHighScore()" data-dismiss="modal">Save</button>
+                            <button type="submit" name="username" id="saveScoreBtn" class="btn btn-primary" onclick="saveHighScore()" data-dismiss="modal">Save Score</button>
                         </form>
                     </div>
                     <div id="footer-btns">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="table">
-            <caption><h1 class="leaderboard-title">Quiz Time<br>Leaderboard</h1></caption>
+            <h1 class="leaderboard-title"><u><b>Quiz Time Leaderboard</b></u></h1>
             <table id="highScores">
                 <tr>
                     <th>Postion</th>
@@ -83,37 +83,37 @@
                 <ul class="list-inline social-links">
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-facebook fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-twitter fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-linkedin fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-pinterest fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-pinterest fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">pinterest</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-instagram fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a target="_blank" href="#">
-                            <i class="fa fa-youtube fa-3x" aria-hidden="true"></i>
+                            <i class="fa fa-youtube fa-3x" id="icon" aria-hidden="true"></i>
                             <span class="sr-only">Youtube</span>
                         </a>
                     </li>

@@ -2,21 +2,58 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+a {
+  color: white;
+  text-decoration: none !important;
+}
 
+/* Unvisited link  */
+
+a:visited {
+  color: white;
+}
+
+/* Visited link    */
+
+a:hover {
+  color: white;
+}
+
+/* Mouse over link */
+
+a:active {
+  color: white;
+}
 
 /*--------------------------- home --------------- */
 
 .home {
   background-color: #4582F4;
-  height: 765px;
+  height: 782px;
+}
+
+.background-load {
+  background-color: #4582F4;
+  height: 762px;
+}
+
+.background-quiz {
+  background-color: #4582F4;
+  height: 800px;
+}
+
+.background-leaderboard {
+  background-color: #4582F4;
+  height: 762px;
 }
 
 .info {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding-top: 40px;
-  width: 50%;
+  width: 70%;
   margin: auto;
+  color: white;
 }
 
 .load {
@@ -29,10 +66,6 @@ body {
 
 .load-button {
   background-color: #1D2129;
-  webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-
   text-decoration: none;
   color: #fafafa;
   padding: 10px;
@@ -43,7 +76,7 @@ body {
 
 .quiz-time {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 150px;
   width: 100vw;
   font-family: 'Montserrat', sans-serif;
   display: flex;
@@ -52,7 +85,7 @@ body {
   margin: -20px;
 }
 
-h1 span {
+.animation span {
   position: relative;
   top: 20px;
   display: inline-block;
@@ -64,55 +97,55 @@ h1 span {
   0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
 }
 
-h1 span:nth-child(2) {
+.animation span:nth-child(2) {
   -webkit-animation-delay: 0.1s;
 }
 
-h1 span:nth-child(3) {
+.animation span:nth-child(3) {
   -webkit-animation-delay: 0.2s;
 }
 
-h1 span:nth-child(4) {
+.animation span:nth-child(4) {
   -webkit-animation-delay: 0.3s;
 }
 
-h1 span:nth-child(5) {
+.animation span:nth-child(5) {
   -webkit-animation-delay: 0.4s;
 }
 
-h1 span:nth-child(6) {
+.animation span:nth-child(6) {
   -webkit-animation-delay: 0.5s;
 }
 
-h1 span:nth-child(7) {
+.animation span:nth-child(7) {
   -webkit-animation-delay: 0.6s;
 }
 
-h1 span:nth-child(8) {
+.animation span:nth-child(8) {
   -webkit-animation-delay: 0.2s;
 }
 
-h1 span:nth-child(9) {
+.animation span:nth-child(9) {
   -webkit-animation-delay: 0.3s;
 }
 
-h1 span:nth-child(10) {
+.animation span:nth-child(10) {
   -webkit-animation-delay: 0.4s;
 }
 
-h1 span:nth-child(11) {
+.animation span:nth-child(11) {
   -webkit-animation-delay: 0.5s;
 }
 
-h1 span:nth-child(12) {
+.animation span:nth-child(12) {
   -webkit-animation-delay: 0.6s;
 }
 
-h1 span:nth-child(13) {
+.animation span:nth-child(13) {
   -webkit-animation-delay: 0.7s;
 }
 
-h1 span:nth-child(14) {
+.animation span:nth-child(14) {
   -webkit-animation-delay: 0.8s;
 }
 
@@ -131,9 +164,11 @@ h1 span:nth-child(14) {
 
 footer {
   color: #fafafa;
-  padding-top: 25px;
+  padding-top: 10px;
   background-color: #B2B5B9;
   display: inline-block;
+  position: relative;
+
 }
 
 .footer-info {
@@ -161,39 +196,79 @@ footer {
   color: #000000;
 }
 
+#icon {
+  color: blue;
+}
+
 /*--------------------------- Quiz Loading --------------- */
 
-.select-amount {
-  width: 30%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 35%;
-  margin-left: 35%;
+.prompt {
+  text-align: center;
+  color: #fafafa;
+  margin-bottom: 0;
+  padding-top: 10px;
 }
 
-.select-category {
-  width: 30%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 35%;
-  margin-left: 35%;
+.start-button {
+  background-color: #1D2129;
+  text-decoration: none;
+  color: #fafafa;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.select-difficulty {
-  width: 30%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 35%;
-  margin-left: 35%;
+.option-select {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 200px;
+}
+
+::placeholder {
+  color: white;
+  padding-left: 15px;
+  font-size: 20px;
 }
 
 .username {
-  width: 30%;
-  margin-top: 200px;
-  margin-bottom: 20px;
-  margin-right: 35%;
-  margin-left: 35%;
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  background-color: #000000;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: white;
 }
+
+.box select {
+  background-color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  padding: 12px;
+  width: 40%;
+  border: solid 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  display: block;
+}
+
+
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 
 /*--------------------------- timer --------------- */
 
@@ -232,6 +307,20 @@ footer {
 }
 
 /*--------------------------- quiz page --------------- */
+
+.finish {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.image-display {
+  margin-bottom: 20px;
+  height: auto;
+}
+
 
 .btn {
   color: #000000;
@@ -277,9 +366,9 @@ footer {
   color: #ddd;
 }
 
-.carousel-item{
-    height: 400px;
-} 
+.carousel-item {
+  height: auto;
+}
 
 #question-1,
 #question-2,
@@ -303,10 +392,10 @@ footer {
 #question-20 {
   padding-top: 20px;
   text-align: center;
-} 
+}
 
 #answers-1,
-#answers-2, 
+#answers-2,
 #answers-3,
 #answers-4,
 #answers-5,
@@ -337,10 +426,12 @@ footer {
 
 .leaderboard-title {
   text-align: center;
-  width: 30%;
+  padding-top: 30px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 30px;
+  font-weight: bold;
+  padding-top: 150px;
 }
 
 .modal-title {
@@ -351,6 +442,7 @@ table {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 70%;
 }
 
 table,
@@ -372,15 +464,21 @@ td {
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
-  
+
 }
 
-#scorePercent {
+#scorePercentRound {
   text-align: center;
   margin-top: 8px;
 }
 
+#saveScoreBtn {
+  background-color: #000000;
+  color: white;
+}
+
 #footer-btns {
   text-align: center;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
