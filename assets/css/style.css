@@ -272,6 +272,11 @@ footer {
 
 /*--------------------------- timer --------------- */
 
+.modal-header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .countdown {
   margin: 0 auto;
   max-width: 350px;
@@ -392,6 +397,7 @@ footer {
 #question-20 {
   padding-top: 20px;
   text-align: center;
+  color: white;
 }
 
 #answers-1,
@@ -418,6 +424,7 @@ footer {
   text-align: center;
   margin: auto;
   width: 70%;
+  color: white;
 }
 
 
@@ -432,6 +439,7 @@ footer {
   margin-right: auto;
   font-weight: bold;
   padding-top: 150px;
+  color: white;
 }
 
 .modal-title {
