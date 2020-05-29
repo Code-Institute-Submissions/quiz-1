@@ -7,19 +7,13 @@ a {
   text-decoration: none !important;
 }
 
-/* Unvisited link  */
-
 a:visited {
   color: white;
 }
 
-/* Visited link    */
-
 a:hover {
   color: white;
 }
-
-/* Mouse over link */
 
 a:active {
   color: white;
@@ -168,7 +162,6 @@ footer {
   background-color: #B2B5B9;
   display: inline-block;
   position: relative;
-
 }
 
 .footer-info {
@@ -261,14 +254,10 @@ footer {
   display: block;
 }
 
-
-
 .box:hover::before {
   color: rgba(255, 255, 255, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
 }
-
-
 
 /*--------------------------- timer --------------- */
 
@@ -322,14 +311,12 @@ footer {
 }
 
 .image-display {
-  padding-left: 75px;
   margin-bottom: 20px;
   height: auto;
   width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .btn {
   color: #000000;
@@ -429,9 +416,8 @@ footer {
   margin: auto;
   width: 350px;
   color: white;
+  padding-left: 50px;
 }
-
-
 
 /*--------------------------- Leaderboard page --------------- */
 

@@ -6,9 +6,11 @@ jQuery(document).ready(function(){
 
     jQuery('#question-carousel').on('slide.bs.carousel', function (e) {
         if (jQuery(this).find(".active :checked").length<=0) {
+            $('#msgModal').find('.modal-body p').text(jQuery(this).find(".active .quote-title").attr('msg'));
+            $('#msgModal').modal('show');
             jQuery('#question-carousel').carousel('pause');
             return false;
         }
-        jQuery('#carousel-personal-loan').carousel('cycle');
+        jQuery('#question-carousel').carousel('cycle');
     });
 });
