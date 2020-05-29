@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="assets/js/modal-timer.js"></script>
     <script src="assets/js/api-value.js"></script>
+    <script src="assets/js/load.js"></script>
     <title>Quiz</title>
 </head>
 
@@ -25,7 +26,7 @@
                 </div>
                 <div class="box">
                     <p class="prompt">Select Number Of Questions</p>
-                    <select class="select-amount" id="amount" onchange="apiValues()">
+                    <select class="select-amount" id="amount" required onchange="apiValues()">
                         <option value="" disabled selected hidden>Select Number Of Questions</option>
                         <option data-amount="5">5</option>
                         <option data-amount="10">10</option>
@@ -35,7 +36,7 @@
                 </div>
                 <div class="box">
                     <p class="prompt">Select Category</p>
-                    <select class="select-category" id="category" onchange="apiValues();">
+                    <select class="select-category" id="category" required onchange="apiValues();">
                         <option value="" disabled selected hidden>Select Category</option>
                         <option data-category="9">General Knowledge</option>
                         <option data-category="10">Books</option>
@@ -61,30 +62,30 @@
                 </div>
                 <div class="box">
                     <p class="prompt">Select Difficulty</p>
-                    <select class="select-difficulty" id="difficulty" onchange="apiValues();">
+                    <select class="select-difficulty" id="difficulty" required onchange="apiValues();">
                         <option value="" disabled selected hidden>Select Difficulty</option>
                         <option data-difficulty="easy">Easy</option>
                         <option data-difficulty="medium">Medium</option>
                         <option data-difficulty="hard">Hard</option>
                     </select>
                 </div>
+                <div class="container-fluid load">
+                    <button type="button" onclick="timeDelay();" id="start-button" class="start-button" data-toggle="modal"  data-target="#exampleModalCenter">
+                      Start Quiz
+                    </button>
+                </div>
             </form>
         </div>
-        <div class="container-fluid load">
-            <button type="button" onclick="timeDelay();" id="start-button" class="start-button" data-toggle="modal" data-target="#exampleModalCenter">
-                  Start Quiz
-            </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"  aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Quiz Starts in</h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="countdown">
-                                <div class="square">
-                                    <div class="digits" id="cd-sec">00</div>
-                                </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Quiz Starts in</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="countdown">
+                            <div class="square">
+                                <div class="digits" id="cd-sec">00</div>
                             </div>
                         </div>
                     </div>
@@ -144,4 +145,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

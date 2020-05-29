@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="assets/js/quiz-timer.js"></script>
     <script src="assets/js/quiz.js"></script>
+    <script src="assets/js/carousel-control.js"></script>
     <title>Quiz</title>
 </head>
 
@@ -28,24 +29,24 @@
                 <div class="digits" id="cd-sec">00</div>
             </div>
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+        <div id="question-carousel" class="carousel slide" data-interval="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <h4 id="question-1"></h4>
                     <div id="answers-1">
                         <form id="form1">
                             <caption>a.</caption>
-                            <input type="radio" name="answer-1" id="q1-input-a" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="" id="q1-choice-a"></label><br>
+                            <input class="carousel" type="radio" name="answer-1" id="q1-input-a" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="" id="q1-choice-a"></label><br>
                             <caption>b.</caption>
-                            <input type="radio" name="answer-1" id="q1-input-b" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="b" id="q1-choice-b"></label><br>
+                            <input class="carousel" type="radio" name="answer-1" id="q1-input-b" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="b" id="q1-choice-b"></label><br>
                             <caption>c.</caption>
-                            <input type="radio" name="answer-1" id="q1-input-c" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="c" id="q1-choice-c"></label><br>
+                            <input class="carousel" type="radio" name="answer-1" id="q1-input-c" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="c" id="q1-choice-c"></label><br>
                             <caption>d.</caption>
-                            <input type="radio" name="answer-1" id="q1-input-d" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="d" id="q1-choice-d"></label><br>
+                            <input class="carousel" type="radio" name="answer-1" id="q1-input-d" onclick="correctOrIncorrect(); disableRadioBtns()" /><label for="d" id="q1-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-1" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-1" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -61,9 +62,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-2" id="q2-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q2-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-2" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-2" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -79,9 +80,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-3" id="q3-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q3-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-3" class=" container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-3" class=" container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -97,9 +98,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-4" id="q4-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q4-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-4" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-4" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -115,9 +116,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-5" id="q5-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q5-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-5" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-5" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-6">
@@ -133,9 +134,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-6" id="q6-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q6-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-6" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-6" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-7">
@@ -151,9 +152,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-7" id="q7-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q7-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-7" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-7" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-8">
@@ -169,9 +170,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-8" id="q8-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q8-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-8" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-8" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-9">
@@ -187,9 +188,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-9" id="q9-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q9-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-9" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-9" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-10">
@@ -205,9 +206,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-10" id="q10-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q10-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-10" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-10" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-11">
@@ -223,9 +224,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-11" id="q11-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q11-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-11" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-11" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-12">
@@ -241,9 +242,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-12" id="q12-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q12-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-12" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-12" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-13">
@@ -259,9 +260,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-13" id="q13-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q13-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-13" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-13" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-14">
@@ -277,9 +278,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-14" id="q14-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q14-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-14" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-14" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-15">
@@ -295,9 +296,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-15" id="q15-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q15-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-15" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-15" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-16">
@@ -313,9 +314,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-16" id="q16-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q16-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-16" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-16" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-17">
@@ -331,9 +332,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-17" id="q17-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q17-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-17" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-17" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-18">
@@ -349,9 +350,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-18" id="q18-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q18-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-18" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-18" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-19">
@@ -367,9 +368,9 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-19" id="q19-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q19-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-19" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-19" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="slide-20" >
@@ -385,23 +386,15 @@
                             <caption>d.</caption>
                             <input type="radio" name="answer-20" id="q20-input-d"  onclick="correctOrIncorrect(); disableRadioBtns()"/><label for="d" id="q20-choice-d"></label><br>
                         </form>
-                        <div id="correct/incorrect-20" class="container-fluid image-display">
-                            
-                        </div>
+                    <div id="correct/incorrect-20" class="container-fluid image-display">
+                        
+                    </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" class="container" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span>Previous</span>
-          </a>
-            <a class="carousel-control-next" class="container" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span>Next</span>
-          </a>
         </div>
         <div class="container-fluid finish">
-            <a href="leaderboard.html" class="load-button">Finish</a>
+            <a href="index.html" class="load-button">Restart</a>
         </div>
     </div>
     <footer class="container-fluid">

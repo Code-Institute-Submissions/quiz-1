@@ -16,8 +16,8 @@ window.addEventListener("load", function() {
   if (amount == 20) {
     counter.end = 240;
   }
-    // Get the containers
-    counter.min = document.getElementById("cd-min");
+  // Get the containers
+  counter.min = document.getElementById("cd-min");
   counter.sec = document.getElementById("cd-sec");
 
   // Start if not past end date 
@@ -34,7 +34,7 @@ window.addEventListener("load", function() {
       var secs = counter.end;
       var mins = Math.floor(secs / 60); // 1 min = 60 secs
       secs -= mins * 60;
-
+      
       // Update HTML
       counter.min.innerHTML = mins;
       counter.sec.innerHTML = secs;
@@ -42,6 +42,7 @@ window.addEventListener("load", function() {
       if (counter.end == 0) {
         window.location.href = "leaderboard.html";
       }
+      
     }, 1000);
   }
 });

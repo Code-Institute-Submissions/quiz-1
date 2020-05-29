@@ -322,8 +322,12 @@ footer {
 }
 
 .image-display {
+  padding-left: 75px;
   margin-bottom: 20px;
   height: auto;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -421,9 +425,9 @@ footer {
 #answers-19,
 #answers-20 {
   padding-top: 20px;
-  text-align: center;
+  text-align: left;
   margin: auto;
-  width: 70%;
+  width: 350px;
   color: white;
 }
 
