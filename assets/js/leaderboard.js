@@ -6,8 +6,9 @@ var scorePercent;
 var username = localStorage.getItem("username");
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 var scorePercentRound;
+var highscoresTable = document.getElementById("highscores-table");
 
-console.log(highScores);
+
 
 function scorePercent() {
 
@@ -16,35 +17,65 @@ function scorePercent() {
     document.getElementById("scorePercentRound").innerHTML = scorePercent + "%";
 }
 
-
-
 function saveHighScore() {
     const score = {
         name: username,
         score: scorePercentRound
-        };
+    };
     console.log(score);
     highScores.push(score);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
-    
+
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    
-    if (scorePercentRound >= highScores[4].score || highScores[4] === "undefined") {
+
+    if (scorePercentRound >= highScores[0].score || scorePercentRound >= highScores[1].score || scorePercentRound >= highScores[2].score || scorePercentRound >= highScores[3].score || scorePercentRound >= highScores[4].score || highScores.length < 4) {
         tada.play();
-    } else {
+    }
+    else {
         sad.play();
     }
-    
-    document.getElementById("username-1").innerHTML = highScores[0].name;
-    document.getElementById("score-1").innerHTML = highScores[0].score;
-    document.getElementById("username-2").innerHTML = highScores[1].name;
-    document.getElementById("score-2").innerHTML = highScores[1].score;
-    document.getElementById("username-3").innerHTML = highScores[2].name;
-    document.getElementById("score-3").innerHTML = highScores[2].score;
-    document.getElementById("username-4").innerHTML = highScores[3].name;
-    document.getElementById("score-4").innerHTML = highScores[3].score;
-    document.getElementById("username-5").innerHTML = highScores[4].name;
-    document.getElementById("score-5").innerHTML = highScores[4].score;
+    console.log(highScores);
+
+    if (highScores.length == 1) {
+        document.getElementById("username-1").innerHTML = highScores[0].name;
+        document.getElementById("score-1").innerHTML = highScores[0].score;
+    }
+    else if (highScores.length == 2) {
+        document.getElementById("username-1").innerHTML = highScores[0].name;
+        document.getElementById("score-1").innerHTML = highScores[0].score;
+        document.getElementById("username-2").innerHTML = highScores[1].name;
+        document.getElementById("score-2").innerHTML = highScores[1].score;
+    }
+    else if (highScores.length == 3) {
+        document.getElementById("username-1").innerHTML = highScores[0].name;
+        document.getElementById("score-1").innerHTML = highScores[0].score;
+        document.getElementById("username-2").innerHTML = highScores[1].name;
+        document.getElementById("score-2").innerHTML = highScores[1].score;
+        document.getElementById("username-3").innerHTML = highScores[2].name;
+        document.getElementById("score-3").innerHTML = highScores[2].score;
+    }
+    else if (highScores.length == 4) {
+        document.getElementById("username-1").innerHTML = highScores[0].name;
+        document.getElementById("score-1").innerHTML = highScores[0].score;
+        document.getElementById("username-2").innerHTML = highScores[1].name;
+        document.getElementById("score-2").innerHTML = highScores[1].score;
+        document.getElementById("username-3").innerHTML = highScores[2].name;
+        document.getElementById("score-3").innerHTML = highScores[2].score;
+        document.getElementById("username-4").innerHTML = highScores[3].name;
+        document.getElementById("score-4").innerHTML = highScores[3].score;
+    }
+    else if (highScores.length == 5) {
+        document.getElementById("username-1").innerHTML = highScores[0].name;
+        document.getElementById("score-1").innerHTML = highScores[0].score;
+        document.getElementById("username-2").innerHTML = highScores[1].name;
+        document.getElementById("score-2").innerHTML = highScores[1].score;
+        document.getElementById("username-3").innerHTML = highScores[2].name;
+        document.getElementById("score-3").innerHTML = highScores[2].score;
+        document.getElementById("username-4").innerHTML = highScores[3].name;
+        document.getElementById("score-4").innerHTML = highScores[3].score;
+        document.getElementById("username-5").innerHTML = highScores[4].name;
+        document.getElementById("score-5").innerHTML = highScores[4].score;
+    }
 }
 
