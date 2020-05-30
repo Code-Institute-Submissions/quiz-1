@@ -224,7 +224,7 @@ footer {
 }
 
 .username {
-  width: 40%;
+  width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -243,7 +243,7 @@ footer {
   margin-right: auto;
   color: white;
   padding: 12px;
-  width: 40%;
+  width: 300px;
   border: solid 1px;
   border-radius: 10px;
   font-size: 20px;
@@ -259,7 +259,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*--------------------------- timer --------------- */
+/*--------------------------- quiz timer --------------- */
 
 .modal-header {
   margin-left: auto;

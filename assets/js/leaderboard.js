@@ -14,7 +14,7 @@ function scorePercent() {
 
     scorePercent = (mostRecentScore / amount) * 100;
     scorePercentRound = Math.round(scorePercent);
-    document.getElementById("scorePercentRound").innerHTML = scorePercent + "%";
+    document.getElementById("scorePercentRound").innerHTML = scorePercentRound + "%";
 }
 
 function saveHighScore() {
@@ -77,5 +77,6 @@ function saveHighScore() {
         document.getElementById("username-5").innerHTML = highScores[4].name;
         document.getElementById("score-5").innerHTML = highScores[4].score;
     }
+    sessionStorage.clear();
 }
 

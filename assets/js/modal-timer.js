@@ -1,5 +1,5 @@
 var counter = {};
-window.addEventListener("click", function () {
+function timer() {
   // COUNTDOWN IN SECONDS
   // EXAMPLE - 5 MINS = 5 X 60 = 300 SECS
   counter.end = 6;
@@ -26,5 +26,5 @@ window.addEventListener("click", function () {
       counter.sec.innerHTML = secs;
     }, 1000);
   }
-});
+}
 
