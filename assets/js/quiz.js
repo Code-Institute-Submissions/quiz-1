@@ -10,7 +10,7 @@ var questionCounter;
 
 function quizMusic() {
     quizMusic = new Audio('assets/audio/quiz-music.mp3');
-    quizMusic.play();
+    quizMusic.play();// function that plays quiz music on quiz.html load
 }
 
 function mute() {
@@ -23,6 +23,7 @@ function mute() {
         document.getElementById("mute").value = "off";
         document.getElementById("mute-icon").className = "fa fa-volume-off fa-2x";
         quizMusic.pause();
+        // function that plays and stops quiz music
     }
 }
 
@@ -63,6 +64,7 @@ function hideUnusedSlides() {
         document.getElementById("slide-7").remove();
         document.getElementById("slide-6").remove();
     }
+    //function that hides unused slides depending on how many questions is chosen
 }
 
 function apiRequest(type, cb) {
@@ -70,10 +72,11 @@ function apiRequest(type, cb) {
     amount = sessionStorage.getItem('amount');
     var category = sessionStorage.getItem('category');
     var difficulty = sessionStorage.getItem('difficulty');
+    // gets api parameters from load.html
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`);
+    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`);// api url
     xhr.send();
 
     xhr.onreadystatechange = function() {
@@ -85,7 +88,7 @@ function apiRequest(type, cb) {
 
 function displayQuestions(type) {
     apiRequest(type, function(data) {
-        myQuestions = data.results;
+        myQuestions = data.results; //stores api response in myQuestions variable
         myQuestions.forEach(function() {
             if (amount == 5) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
@@ -93,6 +96,7 @@ function displayQuestions(type) {
                 document.getElementById("question-3").innerHTML = myQuestions[2].question;
                 document.getElementById("question-4").innerHTML = myQuestions[3].question;
                 document.getElementById("question-5").innerHTML = myQuestions[4].question;
+                // displays questons if there is only 5 questions chosen
             }
             else if (amount == 10) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
@@ -105,6 +109,7 @@ function displayQuestions(type) {
                 document.getElementById("question-8").innerHTML = myQuestions[7].question;
                 document.getElementById("question-9").innerHTML = myQuestions[8].question;
                 document.getElementById("question-10").innerHTML = myQuestions[9].question;
+                // displays questions if there is 10 questions chosen
             }
             else if (amount == 15) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
@@ -122,6 +127,7 @@ function displayQuestions(type) {
                 document.getElementById("question-13").innerHTML = myQuestions[12].question;
                 document.getElementById("question-14").innerHTML = myQuestions[13].question;
                 document.getElementById("question-15").innerHTML = myQuestions[14].question;
+                // displays questions if there 15 is questions chosen
             }
             else if (amount == 20) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
@@ -144,15 +150,17 @@ function displayQuestions(type) {
                 document.getElementById("question-18").innerHTML = myQuestions[17].question;
                 document.getElementById("question-19").innerHTML = myQuestions[18].question;
                 document.getElementById("question-20").innerHTML = myQuestions[19].question;
+                // displays questions if there is 20 questions chosen
             }
         });
         allAnswers = [];
         for (let i = 0; i < myQuestions.length; i++) {
-            correctAns = myQuestions[i].correct_answer;
+            correctAns = myQuestions[i].correct_answer; 
             incorrectAns = myQuestions[i].incorrect_answers;
             answers = incorrectAns.concat(correctAns);
             shuffleAns(answers);
-            allAnswers.push(answers);
+            allAnswers.push(answers); // pushes the shuffled answers into an array called allAnswers
+            // for loop that pulls the correct and incorrect answers from myQuestions and pushes and joins them into answers
             console.log(answers);
         }
         displayAnswers();
@@ -161,13 +169,14 @@ function displayQuestions(type) {
             for (let i = answers.length - 1; i > 0; i--) {
                 let j = Math.floor(Math.random() * (i + 1));
                 [answers[i], answers[j]] = [answers[j], answers[i]];
+                // function that shuffles the answers 
             }
         }
 
         function displayAnswers() {
             if (amount == 5) {
-                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
-                document.getElementById("q1-input-a").value = allAnswers[0][0];
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0]; // writes the first answer to the first radio button
+                document.getElementById("q1-input-a").value = allAnswers[0][0];     // changes the value attribute of the first radio button to correspond to the answer
                 document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
                 document.getElementById("q1-input-b").value = allAnswers[0][1];
                 document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
@@ -582,7 +591,7 @@ function correctOrIncorrect() {
     questionCounter = 0;
 
     if (amount == 5) {
-        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
+        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) { //checks if the answer chosen is the correct answer
             score++;
             questionCounter++;
             document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";

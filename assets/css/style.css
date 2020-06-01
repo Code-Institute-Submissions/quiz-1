@@ -210,11 +210,18 @@ footer {
   border-radius: 5px;
 }
 
+.form-heading {
+  padding-top: 100px;
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+}
+
 .option-select {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 200px;
+  padding-top: 50px;
 }
 
 ::placeholder {

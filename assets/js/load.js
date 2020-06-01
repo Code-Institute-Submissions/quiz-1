@@ -1,11 +1,21 @@
-$('#amount, #category, #difficulty').bind('keyup', function() {
-    if(allFilled()) $('#start-button').removeAttr('disabled');
-});
+function formCompletion() {
+    var total = $('select[required]').length;
+    var selected = 0;
 
-function allFilled() {
-    var filled = true;
-    $('body select').each(function() {
-        if($(this).val() == '') filled = false;
-    });
-    return filled;
+    if ($('#amount option:selected').data('amount') > 0) {
+        selected++;
+    }
+    if ($('#category option:selected').data('category') > 0) {
+        selected++;
+    }
+    if ($('#difficulty option:selected').data('difficulty') === "easy" || $('#difficulty option:selected').data('difficulty') === "medium" || $('#difficulty option:selected').data('difficulty') === "hard") {
+        selected++;
+    }
+    
+    console.log(total);
+    console.log(selected);
+    
+    if (selected == total) {
+        document.getElementById("start-button").removeAttribute('disabled');
+    }
 }
