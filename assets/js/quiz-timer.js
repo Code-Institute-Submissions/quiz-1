@@ -4,17 +4,21 @@ var counter = {};
 window.addEventListener("load", function() {
   // COUNTDOWN IN SECONDS
   // EXAMPLE - 5 MINS = 5 X 60 = 300 SECS
+  //sets time if amount of questions = 5
   if (amount == 5) {
-    counter.end = 60; //sets time if amount of questions = 5
+    counter.end = 60; 
   }
+   //sets time if amount of questions = 10
   if (amount == 10) {
-    counter.end = 120;//sets time if amount of questions = 10
+    counter.end = 120;
   }
+  //sets time if amount of questions = 15
   if (amount == 15) {
-    counter.end = 180;//sets time if amount of questions = 15
+    counter.end = 180; 
   }
+  //sets time if amount of questions = 20
   if (amount == 20) {
-    counter.end = 240;//sets time if amount of questions = 20
+    counter.end = 240; 
   }
   // Get the containers
   counter.min = document.getElementById("cd-min");
@@ -34,15 +38,24 @@ window.addEventListener("load", function() {
       var secs = counter.end;
       var mins = Math.floor(secs / 60); // 1 min = 60 secs
       secs -= mins * 60;
-      
+
       // Update HTML
       counter.min.innerHTML = mins;
       counter.sec.innerHTML = secs;
       
+      // if timer ends takes user to leaderboard page
       if (counter.end == 0) {
-        window.location.href = "leaderboard.html"; // if timer ends takes user to leaderboard page
+        endModal();
+        setTimeout(function() {
+          window.location.href = "leaderboard.html"; 
+        }, 2000);
       }
-      
+
     }, 1000);
   }
 });
+
+//function that makes modal pop up
+function endModal() {
+  $('#end-modal').modal('show');
+}

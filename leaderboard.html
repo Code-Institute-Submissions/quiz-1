@@ -12,33 +12,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/modal-score.js"></script>
     <script type="text/javascript" src="assets/js/leaderboard.js"></script>
+    <script src="assets/js/buttons.js"></script>
     <title>Quiz</title>
 </head>
-
-<body onload="scorePercent()">
+<!-- functions for leaderboard -->
+<body onload="scorePercent(); saveHighScore()">
     <div class="container-fluid background-leaderboard">
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-heading">
-                        <h1>Congratulations<br>Your score is</h1>
-                    </div>
-                    <div>
-                        <h2 id="scorePercentRound"></h2>
-                    </div>
-                    <div class="modal-form">
-                        <form>
-                            <button type="submit" name="username" id="saveScoreBtn" class="btn btn-primary" onclick="saveHighScore()" data-dismiss="modal">Save Score</button>
-                        </form>
-                    </div>
-                    <div id="footer-btns">
-                        <a href="load.html" class="load-button">Play Again</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container-fluid buttons">
+            <!-- button that takes user back to home page -->
+            <button class="btn" onclick="home()"><i class="fa fa-home fa-2x"></i></button>
         </div>
+        <!-- table that displays highscores -->
         <div class="table">
             <h1 class="leaderboard-title"><u><b>Quiz Time Leaderboard</b></u></h1>
+            <div><h4 id="score-display"></h4></div>
             <table id="highScores">
                 <tr>
                     <th>Postion</th>
@@ -73,6 +60,7 @@
             </table>
         </div>
         <div class="container-fluid load">
+            <!-- button that takes player to load.html -->
             <a href="load.html" class="load-button">Play Again</a>
         </div>
     </div>

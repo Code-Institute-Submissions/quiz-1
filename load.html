@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="assets/js/load.js"></script>
+    <script src="assets/js/buttons.js"></script>
     <script src="assets/js/modal-timer.js"></script>
     <script src="assets/js/api-value.js"></script>
     <title>Quiz</title>
@@ -19,13 +20,44 @@
 <body>
     <div class="container-fluid background-load">
         <div>
-            <div><h2 class="form-heading">Please fill in all options on the form below to get started</h2></div>
+            <div class="container-fluid buttons">
+                <!-- button that takes user to homepage -->
+                <button class="btn" onclick="home()"><i class="fa fa-home fa-2x"></i></button>
+                <!-- button that displays instructions modal -->
+                <button class="btn" data-toggle="modal" data-target="#instructions"><i class="fa fa-info fa-2x"></i></button>
+            </div>
+            <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLongTitle">Instructions</h2>
+                        </div>
+                        <div class="modal-body">
+                            <!-- paragraph with instructions -->
+                            <p>Quiz time is a simple multiple choice quiz. When the quiz page is loaded the question will be displayed at the top and the 4 choices will 
+                            be displayed below. When you think you have the correct answer click the corresponding button and if it's correct a green tick will pop up, 
+                            and a red x will be displayed if it's incorrect. After answering  the question click on the next button to go to the next question, you have to answer the current 
+                            question before the next one can be displayed. There is a time limit, depending on how many questions you choose (1 minute per 5 questions) and the game will end 
+                            when the timer runs out.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- button that closes modal -->
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="form-heading">Please fill in all options on the form below to get started</h2>
+            </div>
             <form class="option-select">
                 <div class="box">
+                    <!-- text input for username -->
                     <p class="prompt">Enter Username</p>
                     <input type="text" name="username" id="username" placeholder="Enter Username" class="username" oninput="getUsername()" required/>
                 </div>
                 <div class="box">
+                    <!-- dropdown list where user selects the number of questions -->
                     <p class="prompt">Select Number Of Questions</p>
                     <select class="select-amount" id="amount" required onchange="apiValues(); formCompletion()">
                         <option value="" data-amount="0" disabled selected hidden>Select Number Of Questions</option>
@@ -36,6 +68,7 @@
                     </select>
                 </div>
                 <div class="box">
+                    <!-- dropdown list where user chooses category -->
                     <p class="prompt">Select Category</p>
                     <select class="select-category" id="category" required onchange="apiValues(); formCompletion()">
                         <option value="" data-category="0" disabled selected hidden>Select Category</option>
@@ -62,6 +95,7 @@
                     </select>
                 </div>
                 <div class="box">
+                    <!-- dropdown list where user selects difficulty -->
                     <p class="prompt">Select Difficulty</p>
                     <select class="select-difficulty" id="difficulty" required onchange="apiValues(); formCompletion()">
                         <option value="" data-difficulty="0" disabled selected hidden>Select Difficulty</option>
@@ -70,6 +104,7 @@
                         <option data-difficulty="hard">Hard</option>
                     </select>
                 </div>
+                <!-- button that starts quiz -->
                 <div class="container-fluid load">
                     <button type="button" onclick="timeDelay(); timer()" id="start-button" class="start-button" data-toggle="modal" disabled="disabled" data-target="#countdown-modal">
                       Start Quiz
@@ -77,6 +112,7 @@
                 </div>
             </form>
         </div>
+        <!-- modal that pops up after start button is clicked -->
         <div class="modal fade" id="countdown-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -86,7 +122,8 @@
                     <div class="modal-body">
                         <div class="countdown">
                             <div class="square">
-                                <div class="digits" id="cd-sec">00</div>
+                                    <!-- where the modal timer is displayed -->
+                                <div class="digits" id="cd-sec">5</div>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@ var counter = {};
 function timer() {
   // COUNTDOWN IN SECONDS
   // EXAMPLE - 5 MINS = 5 X 60 = 300 SECS
-  counter.end = 6;
+  counter.end = 5;
 
   // Get the containers
   counter.sec = document.getElementById("cd-sec");

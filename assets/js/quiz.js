@@ -4,79 +4,18 @@ var incorrectAns;
 var correctAns;
 var answers;
 var allAnswers;
-var score;
-var quizMusic;
-var questionCounter;
-
-function quizMusic() {
-    quizMusic = new Audio('assets/audio/quiz-music.mp3');
-    quizMusic.play();// function that plays quiz music on quiz.html load
-}
-
-function mute() {
-    if (document.getElementById("mute").value == "off") {
-        document.getElementById("mute").value = "on";
-        document.getElementById("mute-icon").className = "fa fa-volume-up fa-2x";
-        quizMusic.play();
-    }
-    else if (document.getElementById("mute").value == "on") {
-        document.getElementById("mute").value = "off";
-        document.getElementById("mute-icon").className = "fa fa-volume-off fa-2x";
-        quizMusic.pause();
-        // function that plays and stops quiz music
-    }
-}
-
-function hideUnusedSlides() {
-    if (amount == 15) {
-        document.getElementById("slide-20").remove();
-        document.getElementById("slide-19").remove();
-        document.getElementById("slide-18").remove();
-        document.getElementById("slide-17").remove();
-        document.getElementById("slide-16").remove();
-    }
-    else if (amount == 10) {
-        document.getElementById("slide-20").remove();
-        document.getElementById("slide-19").remove();
-        document.getElementById("slide-18").remove();
-        document.getElementById("slide-17").remove();
-        document.getElementById("slide-16").remove();
-        document.getElementById("slide-15").remove();
-        document.getElementById("slide-14").remove();
-        document.getElementById("slide-13").remove();
-        document.getElementById("slide-12").remove();
-        document.getElementById("slide-11").remove();
-    }
-    else if (amount == 5) {
-        document.getElementById("slide-20").remove();
-        document.getElementById("slide-19").remove();
-        document.getElementById("slide-18").remove();
-        document.getElementById("slide-17").remove();
-        document.getElementById("slide-16").remove();
-        document.getElementById("slide-15").remove();
-        document.getElementById("slide-14").remove();
-        document.getElementById("slide-13").remove();
-        document.getElementById("slide-12").remove();
-        document.getElementById("slide-11").remove();
-        document.getElementById("slide-10").remove();
-        document.getElementById("slide-9").remove();
-        document.getElementById("slide-8").remove();
-        document.getElementById("slide-7").remove();
-        document.getElementById("slide-6").remove();
-    }
-    //function that hides unused slides depending on how many questions is chosen
-}
 
 function apiRequest(type, cb) {
 
+    // gets api parameters from load.html
     amount = sessionStorage.getItem('amount');
     var category = sessionStorage.getItem('category');
     var difficulty = sessionStorage.getItem('difficulty');
-    // gets api parameters from load.html
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`);// api url
+    // api url
+    xhr.open("GET", `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`);
     xhr.send();
 
     xhr.onreadystatechange = function() {
@@ -88,16 +27,20 @@ function apiRequest(type, cb) {
 
 function displayQuestions(type) {
     apiRequest(type, function(data) {
-        myQuestions = data.results; //stores api response in myQuestions variable
+        //stores api response in myQuestions variable
+        myQuestions = data.results;
+        sessionStorage.setItem('myQuestions', myQuestions);
         myQuestions.forEach(function() {
+            // displays questons if there is only 5 questions chosen
             if (amount == 5) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
                 document.getElementById("question-2").innerHTML = myQuestions[1].question;
                 document.getElementById("question-3").innerHTML = myQuestions[2].question;
                 document.getElementById("question-4").innerHTML = myQuestions[3].question;
                 document.getElementById("question-5").innerHTML = myQuestions[4].question;
-                // displays questons if there is only 5 questions chosen
+
             }
+            // displays questions if there is 10 questions chosen
             else if (amount == 10) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
                 document.getElementById("question-2").innerHTML = myQuestions[1].question;
@@ -109,8 +52,8 @@ function displayQuestions(type) {
                 document.getElementById("question-8").innerHTML = myQuestions[7].question;
                 document.getElementById("question-9").innerHTML = myQuestions[8].question;
                 document.getElementById("question-10").innerHTML = myQuestions[9].question;
-                // displays questions if there is 10 questions chosen
             }
+            // displays questions if there 15 is questions chosen
             else if (amount == 15) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
                 document.getElementById("question-2").innerHTML = myQuestions[1].question;
@@ -127,8 +70,8 @@ function displayQuestions(type) {
                 document.getElementById("question-13").innerHTML = myQuestions[12].question;
                 document.getElementById("question-14").innerHTML = myQuestions[13].question;
                 document.getElementById("question-15").innerHTML = myQuestions[14].question;
-                // displays questions if there 15 is questions chosen
             }
+            // displays questions if there is 20 questions chosen
             else if (amount == 20) {
                 document.getElementById("question-1").innerHTML = myQuestions[0].question;
                 document.getElementById("question-2").innerHTML = myQuestions[1].question;
@@ -150,33 +93,35 @@ function displayQuestions(type) {
                 document.getElementById("question-18").innerHTML = myQuestions[17].question;
                 document.getElementById("question-19").innerHTML = myQuestions[18].question;
                 document.getElementById("question-20").innerHTML = myQuestions[19].question;
-                // displays questions if there is 20 questions chosen
             }
         });
         allAnswers = [];
+        // for loop that pulls the correct and incorrect answers from myQuestions and pushes and joins them into answers
         for (let i = 0; i < myQuestions.length; i++) {
-            correctAns = myQuestions[i].correct_answer; 
+            correctAns = myQuestions[i].correct_answer;
             incorrectAns = myQuestions[i].incorrect_answers;
             answers = incorrectAns.concat(correctAns);
             shuffleAns(answers);
-            allAnswers.push(answers); // pushes the shuffled answers into an array called allAnswers
-            // for loop that pulls the correct and incorrect answers from myQuestions and pushes and joins them into answers
+            // pushes the shuffled answers into an array called allAnswers
+            allAnswers.push(answers);
             console.log(answers);
         }
         displayAnswers();
 
+        // function that shuffles the answers 
         function shuffleAns(answers) {
             for (let i = answers.length - 1; i > 0; i--) {
                 let j = Math.floor(Math.random() * (i + 1));
                 [answers[i], answers[j]] = [answers[j], answers[i]];
-                // function that shuffles the answers 
             }
         }
 
         function displayAnswers() {
             if (amount == 5) {
-                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0]; // writes the first answer to the first radio button
-                document.getElementById("q1-input-a").value = allAnswers[0][0];     // changes the value attribute of the first radio button to correspond to the answer
+                // writes the first answer to the first radio button
+                document.getElementById("q1-choice-a").innerHTML = allAnswers[0][0];
+                // changes the value attribute of the first radio button to correspond to the answer
+                document.getElementById("q1-input-a").value = allAnswers[0][0];
                 document.getElementById("q1-choice-b").innerHTML = allAnswers[0][1];
                 document.getElementById("q1-input-b").value = allAnswers[0][1];
                 document.getElementById("q1-choice-c").innerHTML = allAnswers[0][2];
@@ -437,7 +382,7 @@ function displayQuestions(type) {
                 document.getElementById("q2-input-c").value = allAnswers[1][2];
                 document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
                 document.getElementById("q2-input-d").value = allAnswers[1][3];
-                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0]
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
                 document.getElementById("q3-input-a").value = allAnswers[2][0];
                 document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
                 document.getElementById("q3-input-b").value = allAnswers[2][1];
@@ -584,495 +529,5 @@ function displayQuestions(type) {
             }
         }
     });
-}
-
-function correctOrIncorrect() {
-    score = 0;
-    questionCounter = 0;
-
-    if (amount == 5) {
-        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) { //checks if the answer chosen is the correct answer
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (questionCounter == 5) {
-            setTimeout(function() {
-                window.location.href = "leaderboard.html";
-            },2000);
-        }
-        console.log(questionCounter);
-    }
-
-    if (amount == 10) {
-        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (questionCounter == 10) {
-            setTimeout(function() {
-                window.location.href = "leaderboard.html";
-            },2000);
-        }
-    }
-
-    if (amount == 15) {
-        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-11"]:checked').value === myQuestions[10].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-12"]:checked').value === myQuestions[11].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-13"]:checked').value === myQuestions[12].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-14"]:checked').value === myQuestions[13].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-15"]:checked').value === myQuestions[14].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (questionCounter == 15) {
-            setTimeout(function() {
-                window.location.href = "leaderboard.html";
-            },2000);
-        }
-    }
-
-    if (amount == 20) {
-        if (document.querySelector('input[name="answer-1"]:checked').value === myQuestions[0].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-1").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-2"]:checked').value === myQuestions[1].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-2").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-3"]:checked').value === myQuestions[2].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-3").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-4"]:checked').value === myQuestions[3].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-4").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-5"]:checked').value === myQuestions[4].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-5").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-6"]:checked').value === myQuestions[5].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-6").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-7"]:checked').value === myQuestions[6].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-7").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-8"]:checked').value === myQuestions[7].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-8").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-9"]:checked').value === myQuestions[8].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-9").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-10"]:checked').value === myQuestions[9].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-10").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-11"]:checked').value === myQuestions[10].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-11").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-12"]:checked').value === myQuestions[11].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-12").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-13"]:checked').value === myQuestions[12].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-13").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-14"]:checked').value === myQuestions[13].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-14").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-15"]:checked').value === myQuestions[14].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-15").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-16"]:checked').value === myQuestions[15].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-16").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-16").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-17"]:checked').value === myQuestions[16].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-17").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-17").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-18"]:checked').value === myQuestions[17].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-18").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-18").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-19"]:checked').value === myQuestions[18].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-19").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-19").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (document.querySelector('input[name="answer-20"]:checked').value === myQuestions[19].correct_answer) {
-            score++;
-            questionCounter++;
-            document.getElementById("correct/incorrect-20").innerHTML = "<img src='assets/images/correct.png'>";
-        }
-        else {
-            questionCounter++;
-            document.getElementById("correct/incorrect-20").innerHTML = "<img src='assets/images/incorrect.png'>";
-        }
-        if (questionCounter == 20) {
-            setTimeout(function() {
-                window.location.href = "leaderboard.html";
-            },2000);
-        }
-    }
-    console.log(score);
-    localStorage.setItem('mostRecentScore', score);
 }
 

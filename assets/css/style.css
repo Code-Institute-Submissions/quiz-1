@@ -33,7 +33,7 @@ a:active {
 
 .background-quiz {
   background-color: #4582F4;
-  height: 800px;
+  height: 762px;
 }
 
 .background-leaderboard {
@@ -308,6 +308,11 @@ footer {
 }
 
 /*--------------------------- quiz page --------------- */
+.carousel-control-next {
+  position: absolute;
+  height: 224px;
+  align-items: flex-end;
+}
 
 .finish {
   width: 30%;
@@ -321,15 +326,12 @@ footer {
   margin-bottom: 20px;
   height: auto;
   width: 350px;
+  padding-left: 50px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.btn {
-  color: #000000;
-}
-
-.mute-button {
+.buttons {
   margin-top: 20px;
   float: right;
 }
@@ -434,16 +436,12 @@ footer {
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
-  padding-top: 150px;
+  padding-top: 80px;
   color: white;
 }
 
-.modal-title {
-  text-align: center;
-}
-
 table {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
@@ -458,27 +456,10 @@ td {
   width: 30%;
 }
 
-.modal-heading {
+#score-display {
   text-align: center;
-  margin-top: 8px;
-  border-bottom: solid 1px;
-}
-
-.modal-form {
-  text-align: center;
-  margin-top: 8px;
-  margin-bottom: 8px;
-
-}
-
-#scorePercentRound {
-  text-align: center;
-  margin-top: 8px;
-}
-
-#saveScoreBtn {
-  background-color: #000000;
   color: white;
+  margin-top: 15px;
 }
 
 #footer-btns {

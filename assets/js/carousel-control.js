@@ -1,3 +1,4 @@
+// function that makes a modal pop up if they try to go to the next question without answering the current question
 jQuery(document).ready(function(){
     jQuery('#question-carousel').carousel({
         interval:false,
@@ -12,6 +13,5 @@ jQuery(document).ready(function(){
             return false;
         }
         jQuery('#question-carousel').carousel('cycle');
-        // function that makes a modal pop up if they try to go to the next question without answering the current question
     });
 });
