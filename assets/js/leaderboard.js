@@ -5,16 +5,9 @@ var sad = new Audio('assets/audio/sadtrombone.wav');
 var scorePercent;
 var username = localStorage.getItem("username");
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-var scorePercentRound;
+var scorePercentRound = sessionStorage.getItem('scorePercentRound');
 var highscoresTable = document.getElementById("highscores-table");
 
- //takes mostRecentSore variable and converts it to percent and rounds to the nearest integer
-function scorePercent() {
-
-    scorePercent = (mostRecentScore / amount) * 100;
-    scorePercentRound = Math.round(scorePercent);
-    document.getElementById("score-display").innerHTML = "Your score is " + scorePercentRound + "%";
-}
 
 function saveHighScore() {
     //stores scores and username in an object

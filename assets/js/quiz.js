@@ -136,7 +136,7 @@ function displayQuestions(type) {
                 document.getElementById("q2-input-c").value = allAnswers[1][2];
                 document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
                 document.getElementById("q2-input-d").value = allAnswers[1][3];
-                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0]
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
                 document.getElementById("q3-input-a").value = allAnswers[2][0];
                 document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
                 document.getElementById("q3-input-b").value = allAnswers[2][1];
@@ -178,7 +178,7 @@ function displayQuestions(type) {
                 document.getElementById("q2-input-c").value = allAnswers[1][2];
                 document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
                 document.getElementById("q2-input-d").value = allAnswers[1][3];
-                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0]
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
                 document.getElementById("q3-input-a").value = allAnswers[2][0];
                 document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
                 document.getElementById("q3-input-b").value = allAnswers[2][1];
@@ -260,7 +260,7 @@ function displayQuestions(type) {
                 document.getElementById("q2-input-c").value = allAnswers[1][2];
                 document.getElementById("q2-choice-d").innerHTML = allAnswers[1][3];
                 document.getElementById("q2-input-d").value = allAnswers[1][3];
-                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0]
+                document.getElementById("q3-choice-a").innerHTML = allAnswers[2][0];
                 document.getElementById("q3-input-a").value = allAnswers[2][0];
                 document.getElementById("q3-choice-b").innerHTML = allAnswers[2][1];
                 document.getElementById("q3-input-b").value = allAnswers[2][1];
