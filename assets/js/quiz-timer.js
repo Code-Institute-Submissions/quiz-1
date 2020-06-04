@@ -50,7 +50,6 @@ window.addEventListener("load", function() {
           window.location.href = "leaderboard.html"; 
         }, 2000);
       }
-
     }, 1000);
   }
 });

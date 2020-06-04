@@ -15,7 +15,6 @@ function saveHighScore() {
         name: username,
         score: scorePercentRound
     };
-    console.log(score);
     //pushes score object into highscores array
     highScores.push(score); 
     //sorts array from highest to lowest
@@ -27,15 +26,14 @@ function saveHighScore() {
     localStorage.setItem("highScores", JSON.stringify(highScores));
     
     // determines weather or not the user makes it on the leaderboard and plays music if sucessful
-    if (scorePercentRound >= highScores[0].score || scorePercentRound >= highScores[1].score || scorePercentRound >= highScores[2].score || scorePercentRound >= highScores[3].score || scorePercentRound >= highScores[4].score || highScores.length < 4) {
+    if (scorePercentRound >= highScores[0].score || scorePercentRound >= highScores[1].score || scorePercentRound >= highScores[2].score || scorePercentRound >= highScores[3].score 
+    || scorePercentRound >= highScores[4].score || highScores.length < 4) {
         tada.play();
     }
     // music that plays if user does not make it onto the leaderboard
     else {
         sad.play();
     }
-    console.log(highScores);
-    
     // if there is only one item in highscores writes that item to the leaderboard
     if (highScores.length == 1) {
         document.getElementById("username-1").innerHTML = highScores[0].name;

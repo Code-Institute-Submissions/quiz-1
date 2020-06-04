@@ -14,10 +14,6 @@ function formCompletion() {
     if ($('#difficulty option:selected').data('difficulty') === "easy" || $('#difficulty option:selected').data('difficulty') === "medium" || $('#difficulty option:selected').data('difficulty') === "hard") {
         selected++; 
     }
-    
-    console.log(total);
-    console.log(selected);
-    
     //removes disabled attribute when selected is equal to total
     if (selected == total) {
         document.getElementById("start-button").removeAttribute('disabled'); 

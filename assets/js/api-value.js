@@ -8,7 +8,7 @@ function apiValues() {
     amount = $("#amount option:selected").data("amount");
     category = $("#category option:selected").data("category");
     difficulty = $("#difficulty option:selected").data("difficulty");
-
+    // saves api parameters to session storage
     sessionStorage.setItem('amount', amount);
     sessionStorage.setItem('category', category);
     sessionStorage.setItem('difficulty', difficulty);
@@ -17,15 +17,12 @@ function apiValues() {
  //function that takes user to quiz page with a delay of seconds to let modal timer finish
 function timeDelay() {
     setTimeout(function() {
-
         window.location.href = "quiz.html";
-
     }, 6000);
 }
 
 // gets the value of the user name and saves it to session storage to use in leaderboard.html
 function getUsername() {
     var username = document.getElementById("username").value;
-    console.log(username);
     localStorage.setItem("username", username);
 }

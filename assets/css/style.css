@@ -23,22 +23,22 @@ a:active {
 
 .home {
   background-color: #4582F4;
-  height: 782px;
+  height: 815px;
 }
 
 .background-load {
   background-color: #4582F4;
-  height: 762px;
+  height: 795px;
 }
 
 .background-quiz {
   background-color: #4582F4;
-  height: 762px;
+  height: 795px;
 }
 
 .background-leaderboard {
   background-color: #4582F4;
-  height: 762px;
+  height: 795px;
 }
 
 .info {
@@ -83,7 +83,7 @@ a:active {
   position: relative;
   top: 20px;
   display: inline-block;
-  -webkit-animation: bounce 0.3s ease infinite alternate;
+  animation: bounce 0.3s ease infinite alternate;
   font-size: 100px;
   color: #fff;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
@@ -92,55 +92,55 @@ a:active {
 }
 
 .animation span:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .animation span:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .animation span:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .animation span:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .animation span:nth-child(6) {
-  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .animation span:nth-child(7) {
-  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .animation span:nth-child(8) {
-  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .animation span:nth-child(9) {
-  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .animation span:nth-child(10) {
-  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .animation span:nth-child(11) {
-  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .animation span:nth-child(12) {
-  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .animation span:nth-child(13) {
-  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .animation span:nth-child(14) {
-  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 /* ANIMATION */
@@ -189,7 +189,7 @@ footer {
   color: #000000;
 }
 
-#icon {
+.icon {
   color: blue;
 }
 
@@ -255,8 +255,6 @@ footer {
   border-radius: 10px;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
   outline: none;
   display: block;
 }
@@ -308,6 +306,7 @@ footer {
 }
 
 /*--------------------------- quiz page --------------- */
+
 .carousel-control-next {
   position: absolute;
   height: 224px;
@@ -375,51 +374,13 @@ footer {
   height: auto;
 }
 
-#question-1,
-#question-2,
-#question-3,
-#question-4,
-#question-5,
-#question-6,
-#question-7,
-#question-8,
-#question-9,
-#question-10,
-#question-11,
-#question-12,
-#question-13,
-#question-14,
-#question-15,
-#question-16,
-#question-17,
-#question-18,
-#question-19,
-#question-20 {
+.question {
   padding-top: 20px;
   text-align: center;
   color: white;
 }
 
-#answers-1,
-#answers-2,
-#answers-3,
-#answers-4,
-#answers-5,
-#answers-6,
-#answers-7,
-#answers-8,
-#answers-9,
-#answers-10,
-#answers-11,
-#answers-12,
-#answers-13,
-#answers-14,
-#answers-15,
-#answers-16,
-#answers-17,
-#answers-18,
-#answers-19,
-#answers-20 {
+.answer {
   padding-top: 20px;
   text-align: left;
   margin: auto;
