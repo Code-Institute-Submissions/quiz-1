@@ -201,8 +201,9 @@ I deployed the website on github pages. to do this:
 * The correct and incorrect images were taken from [pixabay](https://pixabay.com/)
 * The quiz music was taken [bensound.com](bensound.com)
 * The tada and sadtrombone sound was taken from [freesound.org](https://freesound.org/)
-* The home page animation was taken from []()
+* The home page animation was taken from [codepen](https://codepen.io/)
 
 ### Achknowledgements
 * The footer for this project was inspired by the ucd resume mini project I completed with the [code institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%26c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417883007025&hsa_acc=8983321581&hsa_grp=56427889338&hsa_mt=e&hsa_cam=1378516521&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwt-L2BRA_EiwAacX32TsgmyfPeERo7nG068BhEWbJ9pP5w_H-wVtl5yWFdPSL6C5XUF1tyxoCyMQQAvD_BwE&gclsrc=aw.ds).
 * I Aslo got help from [w3schools.com](https://www.w3schools.com/) and [developer.mozilla.org](https://developer.mozilla.org/en-US/)
+* 
